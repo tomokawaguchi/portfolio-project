@@ -1,0 +1,17 @@
+// Valery font
+@font-face {
+	font-family: "Valery";
+	src: url("../fonts/valery.eot");
+	src: url("../fonts/valery.eot?#iefix") format("embedded-opentype"), url("../fonts/valery.woff2") format("woff2"),
+		url("../fonts/valery.woff") format("woff"), url("../fonts/valery.ttf") format("truetype"), url("../fonts/valery.svg#Valery") format("svg");
+}
+
+// Font icons
+@font-face {
+	font-family: "fontello";
+	src: url("../fonts/fontello.eot?40166400");
+	src: url("../fonts/fontello.eot?40166400#iefix") format("embedded-opentype"), url("../fonts/fontello.woff?40166400") format("woff"),
+		url("../fonts/fontello.ttf?40166400") format("truetype"), url("../fonts/fontello.svg?40166400#fontello") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
