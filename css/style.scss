@@ -5,9 +5,12 @@
 //******************** Partials ********************//
 
 //******************** Components ********************//
-@use "./scss/components/header";
+@use "./scss/components/socials-bar";
 
 //******************** Layouts ********************//
 @use "./scss/layouts/body";
+@use "./scss/layouts/header";
+@use "./scss/layouts/main";
+@use "./scss/layouts/aside";
 
 //******************** Pages ********************//

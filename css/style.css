@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Valery";
   src: url("../fonts/valery.eot");
@@ -341,19 +342,42 @@ template {
   display: none;
 }
 
-.logo-link {
-  font-family: "Valery";
-  text-decoration: none;
-  color: #ee224a;
-  font-size: 32px;
+.socials {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: center;
+  flex-direction: column;
+  width: 50px;
 }
-
-.nav__list {
-  list-style: none;
-}
-.nav__link {
-  color: #333333;
+.socials__link {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: center;
+  flex-direction: column;
   text-decoration: none;
+  color: #999999;
+}
+.socials__link:not(:last-child):after {
+  content: "";
+  display: inline-block;
+  background-color: #999999;
+  width: 50px;
+  height: 1px;
+  margin: 15px 0;
+}
+.socials__icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
 }
 
 html {
@@ -363,6 +387,13 @@ html {
 }
 
 body {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: unset;
   font-family: "Noto Sans", sans-serif;
   color: #333333;
   font-size: 16px;
@@ -375,4 +406,183 @@ body {
   font-family: "fontello";
   font-style: normal;
   font-weight: normal;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+}
+header .header-inner {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: unset;
+  padding: 1.5rem 1rem;
+}
+header .logo-link {
+  font-family: "Valery";
+  text-decoration: none;
+  color: #ee224a;
+  font-size: 32px;
+}
+header .mobile-menu-btn {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: center;
+  flex-direction: column;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+header .mobile-menu-btn .hamburger {
+  display: grid;
+  height: 30px;
+  width: 30px;
+}
+header .mobile-menu-btn .hamburger__bar {
+  width: 100%;
+  height: 2px;
+  background-color: #333333;
+}
+header .mobile-menu-btn__text {
+  font-size: 14px;
+}
+@media only screen and (min-width: 770px) {
+  header .mobile-menu-btn {
+    display: none;
+  }
+}
+@media only screen and (min-width: 770px) {
+  header {
+    -webkit-box-flex: 0 0 200px;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 0 0 200px;
+    /* OLD - Firefox 19- */
+    -webkit-flex: 0 0 200px;
+    /* Chrome */
+    -ms-flex: 0 0 200px;
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: unset;
+    position: relative;
+  }
+  header .header-inner {
+    position: fixed;
+    flex-direction: column;
+  }
+  header .logo-link {
+    margin-bottom: 20px;
+  }
+}
+
+.nav__list {
+  font-size: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav__link {
+  color: #333333;
+  text-decoration: none;
+}
+.nav.nav--desktop {
+  display: none;
+}
+@media only screen and (min-width: 770px) {
+  .nav.nav--desktop {
+    display: block;
+  }
+}
+
+main {
+  -webkit-box-flex: auto;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: auto;
+  /* OLD - Firefox 19- */
+  -webkit-flex: auto;
+  /* Chrome */
+  -ms-flex: auto;
+  height: 100vh;
+}
+main:before {
+  content: "Hello";
+  position: absolute;
+  font-family: "Valery";
+  font-size: 200px;
+  color: #eaeaea;
+  left: -80px;
+  bottom: 30%;
+  z-index: -1;
+  transform: rotate(90deg);
+}
+main:after {
+  content: "こんにちは";
+  position: absolute;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 70px;
+  color: #eaeaea;
+  left: -120px;
+  bottom: 30%;
+  z-index: -1;
+  transform: rotate(90deg);
+}
+main img {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+@media only screen and (min-width: 770px) {
+  main:before {
+    font-size: 250px;
+    left: 0;
+    bottom: 200px;
+    transform: rotate(0deg);
+  }
+  main:after {
+    font-size: 80px;
+    left: 0;
+    bottom: 80px;
+    transform: rotate(0deg);
+  }
+}
+
+aside {
+  position: fixed;
+  right: 1rem;
+  top: 100px;
+}
+@media only screen and (min-width: 770px) {
+  aside {
+    -webkit-box-flex: 0 0 100px;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 0 0 100px;
+    /* OLD - Firefox 19- */
+    -webkit-flex: 0 0 100px;
+    /* Chrome */
+    -ms-flex: 0 0 100px;
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: unset;
+    position: relative;
+    right: unset;
+  }
+  aside .aside-inner {
+    position: fixed;
+  }
 }

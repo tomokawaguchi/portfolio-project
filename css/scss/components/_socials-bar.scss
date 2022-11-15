@@ -1,0 +1,31 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+
+.socials {
+	@include displayFlex(unset, center);
+	flex-direction: column;
+	width: 50px;
+
+	&__link {
+		@include displayFlex(unset, center);
+		flex-direction: column;
+		text-decoration: none;
+		color: $grey;
+
+		&:not(:last-child) {
+			&:after {
+				content: "";
+				display: inline-block;
+				background-color: $grey;
+				width: 50px;
+				height: 1px;
+				margin: 15px 0;
+			}
+		}
+	}
+
+	&__icon {
+		@include customIcon;
+		font-size: 24px;
+	}
+}

@@ -1,0 +1,91 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+@import "../partials/typography";
+
+header {
+	position: fixed;
+	width: 100%;
+
+	.header-inner {
+		@include displayFlex(space-between, unset);
+		padding: 1.5rem 1rem;
+	}
+
+	// For the logo
+	.logo-link {
+		font-family: $accent-font;
+		text-decoration: none;
+		color: $pink;
+		font-size: 32px;
+	}
+
+	// Hamburger button
+	.mobile-menu-btn {
+		@include displayFlex(unset, center);
+		flex-direction: column;
+		border: none;
+		background-color: transparent;
+		padding: 0;
+		cursor: pointer;
+
+		.hamburger {
+			display: grid;
+			height: 30px;
+			width: 30px;
+
+			&__bar {
+				width: 100%;
+				height: 2px;
+				background-color: $black-light;
+			}
+		}
+
+		&__text {
+			font-size: 14px;
+		}
+
+		@include mediaQuery("min", 770px) {
+			display: none;
+		}
+	}
+
+	@include mediaQuery("min", 770px) {
+		@include flex(0 0 200px);
+		@include displayFlex(center, unset);
+		position: relative;
+
+		.header-inner {
+			position: fixed;
+			flex-direction: column;
+		}
+
+		.logo-link {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+// For the navigation
+.nav {
+	&__list {
+		font-size: 20px;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	&__link {
+		color: $black-light;
+		text-decoration: none;
+	}
+
+	&.nav--desktop {
+		display: none;
+	}
+
+	@include mediaQuery("min", 770px) {
+		&.nav--desktop {
+			display: block;
+		}
+	}
+}
