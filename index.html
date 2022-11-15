@@ -24,16 +24,16 @@
 				<nav class="nav nav--desktop">
 					<ul class="nav__list">
 						<li class="nav__menu">
-							<a class="nav__link" href="#">Home</a>
+							<a class="nav__link" href="#home-panel">Home</a>
 						</li>
 						<li class="nav__menu">
-							<a class="nav__link" href="#">About</a>
+							<a class="nav__link" href="#about-panel">About</a>
 						</li>
 						<li class="nav__menu">
-							<a class="nav__link" href="#">Works</a>
+							<a class="nav__link" href="#works-panel">Works</a>
 						</li>
 						<li class="nav__menu">
-							<a class="nav__link" href="#">Contact</a>
+							<a class="nav__link" href="#contact-panel">Contact</a>
 						</li>
 					</ul>
 				</nav>
@@ -50,14 +50,29 @@
 			</div>
 		</header>
 		<main>
-			<section>
-				<img src="./images/deers.jpg" alt="" />
+			<section id="home-panel">
+				<h2>Home</h2>
+
+				<!-- For the scroll button -->
+				<a href="#about-panel" class="scroll-btn">
+					<span class="scroll-btn__text">Scroll Down</span>
+					<i class="custom-icon icon-arrow-down">&#xe877;</i>
+				</a>
 			</section>
-			<section>
-				<img src="./images/deers.jpg" alt="" />
+			<section id="about-panel">
+				<h2>About</h2>
 			</section>
-			<section>
-				<img src="./images/deers.jpg" alt="" />
+			<section id="works-panel">
+				<h2>Works</h2>
+			</section>
+			<section id="contact-panel">
+				<h2>Contact</h2>
+
+				<!-- For the scroll button -->
+				<a href="#home-panel" class="scroll-btn">
+					<span class="scroll-btn__text">Back to Top</span>
+					<i class="custom-icon icon-arrow-up">&#xe877;</i>
+				</a>
 			</section>
 		</main>
 		<aside>
@@ -76,7 +91,6 @@
 			</div>
 		</aside>
 		<!-- <i class="custom-icon icon-link">&#xe800;</i>
-		<i class="custom-icon icon-arrow-down">&#xe877;</i>
 		<i class="custom-icon icon-close">&#xe878;</i> -->
 	</body>
 </html>

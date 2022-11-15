@@ -35,3 +35,23 @@
 		}
 	}
 }
+
+// Button default styling reset
+@mixin buttonReset {
+	border: none;
+	background-color: transparent;
+	padding: 0;
+}
+
+// Hover
+@mixin onHoverFocus {
+	&:hover,
+	&:focus {
+		@content;
+	}
+}
+
+// Transition
+@mixin transitionEffect {
+	transition: all 0.2s ease-in-out;
+}

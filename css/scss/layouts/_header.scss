@@ -21,11 +21,9 @@ header {
 
 	// Hamburger button
 	.mobile-menu-btn {
+		@include buttonReset;
 		@include displayFlex(unset, center);
 		flex-direction: column;
-		border: none;
-		background-color: transparent;
-		padding: 0;
 		cursor: pointer;
 
 		.hamburger {

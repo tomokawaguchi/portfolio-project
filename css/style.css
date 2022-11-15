@@ -380,6 +380,32 @@ template {
   font-size: 24px;
 }
 
+.scroll-btn {
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  color: #333333;
+  text-decoration: none;
+}
+.scroll-btn__text {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.scroll-btn .custom-icon {
+  transition: all 0.2s ease-in-out;
+  font-size: 45px;
+}
+.scroll-btn .custom-icon.icon-arrow-up {
+  transform: rotate(180deg);
+}
+
 html {
   font-size: 100%;
   text-rendering: optimizeLegibility;
@@ -429,6 +455,9 @@ header .logo-link {
   font-size: 32px;
 }
 header .mobile-menu-btn {
+  border: none;
+  background-color: transparent;
+  padding: 0;
   display: flex;
   display: -webkit-box;
   display: -moz-box;
@@ -437,9 +466,6 @@ header .mobile-menu-btn {
   justify-content: unset;
   align-items: center;
   flex-direction: column;
-  border: none;
-  background-color: transparent;
-  padding: 0;
   cursor: pointer;
 }
 header .mobile-menu-btn .hamburger {
@@ -538,10 +564,8 @@ main:after {
   z-index: -1;
   transform: rotate(90deg);
 }
-main img {
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+main section {
+  height: 100vh;
 }
 @media only screen and (min-width: 770px) {
   main:before {
