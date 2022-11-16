@@ -12,6 +12,7 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="./css/style.css" />
+		<script src="script.js" defer></script>
 		<title>Tomo's Portfolio</title>
 	</head>
 	<body>
@@ -24,7 +25,7 @@
 				<nav class="nav nav--desktop">
 					<ul class="nav__list">
 						<li class="nav__menu">
-							<a class="nav__link" href="#home-panel">Home</a>
+							<a class="nav__link" href="#landing-panel">Home</a>
 						</li>
 						<li class="nav__menu">
 							<a class="nav__link" href="#about-panel">About</a>
@@ -49,9 +50,9 @@
 				</button>
 			</div>
 		</header>
-		<main>
-			<section id="home-panel">
-				<h2>Home</h2>
+		<main id="mainElement">
+			<section id="landing-panel" class="section-panel">
+				<h2 class="section-panel__heading">Home</h2>
 
 				<!-- For the scroll button -->
 				<a href="#about-panel" class="scroll-btn">
@@ -59,17 +60,40 @@
 					<i class="custom-icon icon-arrow-down">&#xe877;</i>
 				</a>
 			</section>
-			<section id="about-panel">
-				<h2>About</h2>
+			<section id="about-panel" class="section-panel">
+				<h2 class="section-panel__heading">About</h2>
 			</section>
-			<section id="works-panel">
-				<h2>Works</h2>
+			<section id="works-panel" class="section-panel">
+				<h2 class="section-panel__heading">Works</h2>
 			</section>
-			<section id="contact-panel">
-				<h2>Contact</h2>
+			<section id="contact-panel" class="section-panel">
+				<h2 class="section-panel__heading">Contact</h2>
+				<p class="section-panel__para">Here are the ways to get in touch with me!</p>
+
+				<!-- Contact list -->
+				<ul class="contact-list">
+					<li class="contact-list__item">
+						<a class="contact-list__link" href="mailto:tomo.k.dev@gmail.com">
+							<i class="socials__icon contact-list__icon">&#xe87a;</i>
+							<span>tomo.k.dev@gmail.com</span>
+						</a>
+					</li>
+					<li class="contact-list__item">
+						<a class="contact-list__link" href="https://github.com/tomokawaguchi" target="_blank">
+							<i class="socials__icon contact-list__icon">&#xe87b;</i>
+							<span>/tomoko-kawaguchi</span>
+						</a>
+					</li>
+					<li class="contact-list__item">
+						<a class="contact-list__link" href="https://www.linkedin.com/in/tomoko-kawaguchi/" target="_blank">
+							<i class="socials__icon contact-list__icon">&#xe87c;</i>
+							<span>/tomokawaguchi</span>
+						</a>
+					</li>
+				</ul>
 
 				<!-- For the scroll button -->
-				<a href="#home-panel" class="scroll-btn">
+				<a href="#landing-panel" class="scroll-btn scroll-btn--back">
 					<span class="scroll-btn__text">Back to Top</span>
 					<i class="custom-icon icon-arrow-up">&#xe877;</i>
 				</a>

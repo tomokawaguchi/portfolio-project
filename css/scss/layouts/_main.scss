@@ -30,8 +30,19 @@ main {
 		transform: rotate(90deg);
 	}
 
-	section {
+	.section-panel {
+		padding-top: 100px;
 		height: 100vh;
+
+		&__heading {
+			font-size: 32px;
+			font-weight: 700;
+			margin-bottom: 50px;
+		}
+
+		&__para {
+			margin-bottom: 50px;
+		}
 	}
 
 	@include mediaQuery("min", 770px) {

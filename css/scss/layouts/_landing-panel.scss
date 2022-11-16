@@ -1,0 +1,13 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+@import "../partials/typography";
+
+#landing-panel {
+	position: relative;
+
+	.scroll-btn {
+		position: absolute;
+		right: 100px;
+		bottom: 100px;
+	}
+}

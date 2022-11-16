@@ -564,8 +564,17 @@ main:after {
   z-index: -1;
   transform: rotate(90deg);
 }
-main section {
+main .section-panel {
+  padding-top: 100px;
   height: 100vh;
+}
+main .section-panel__heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+main .section-panel__para {
+  margin-bottom: 50px;
 }
 @media only screen and (min-width: 770px) {
   main:before {
@@ -609,4 +618,13 @@ aside {
   aside .aside-inner {
     position: fixed;
   }
+}
+
+#landing-panel {
+  position: relative;
+}
+#landing-panel .scroll-btn {
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
 }
