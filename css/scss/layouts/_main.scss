@@ -5,6 +5,7 @@
 main {
 	@include flex(auto);
 	height: 100vh;
+	z-index: 0;
 
 	&:before {
 		content: "Hello";
@@ -31,8 +32,12 @@ main {
 	}
 
 	.section-panel {
-		padding-top: 100px;
 		height: 100vh;
+
+		&__inner {
+			height: 100%;
+			padding: 100px 2rem 0;
+		}
 
 		&__heading {
 			font-size: 32px;

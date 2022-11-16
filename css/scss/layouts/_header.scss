@@ -5,6 +5,7 @@
 header {
 	position: fixed;
 	width: 100%;
+	z-index: 1;
 
 	.header-inner {
 		@include displayFlex(space-between, unset);
@@ -27,7 +28,8 @@ header {
 		cursor: pointer;
 
 		.hamburger {
-			display: grid;
+			@include displayFlex(space-evenly, unset);
+			flex-direction: column;
 			height: 30px;
 			width: 30px;
 
@@ -45,6 +47,17 @@ header {
 		@include mediaQuery("min", 770px) {
 			display: none;
 		}
+	}
+
+	.mobile-menu-wrapper {
+		position: absolute;
+		background-color: $black-light;
+		right: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		height: 100vh;
+		transform: translateY(-100%);
 	}
 
 	@include mediaQuery("min", 770px) {
@@ -77,13 +90,68 @@ header {
 		text-decoration: none;
 	}
 
-	&.nav--desktop {
+	&--desktop {
 		display: none;
+	}
+
+	&--mobile {
+		&__link {
+			color: $grey;
+		}
 	}
 
 	@include mediaQuery("min", 770px) {
 		&.nav--desktop {
 			display: block;
 		}
+	}
+}
+
+// For the mobile active class
+.active-menu {
+	overflow-y: hidden;
+
+	header {
+		.mobile-menu-btn {
+			color: $grey;
+			z-index: 2;
+
+			.hamburger {
+				display: inline-block;
+
+				&__bar {
+					background-color: $grey;
+
+					&:first-child {
+						display: none;
+					}
+
+					&:nth-child(2) {
+						transform: rotate(-45deg);
+					}
+
+					&:last-child {
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+
+		.nav--mobile {
+			height: 100%;
+
+			&__list {
+				padding: 50px;
+			}
+		}
+	}
+
+	.mobile-menu-wrapper {
+		transform: translateY(0);
+	}
+
+	main,
+	aside {
+		z-index: -1;
 	}
 }

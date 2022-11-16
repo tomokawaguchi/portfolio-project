@@ -437,6 +437,7 @@ body {
 header {
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 header .header-inner {
   display: flex;
@@ -469,7 +470,14 @@ header .mobile-menu-btn {
   cursor: pointer;
 }
 header .mobile-menu-btn .hamburger {
-  display: grid;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: space-evenly;
+  align-items: unset;
+  flex-direction: column;
   height: 30px;
   width: 30px;
 }
@@ -485,6 +493,16 @@ header .mobile-menu-btn__text {
   header .mobile-menu-btn {
     display: none;
   }
+}
+header .mobile-menu-wrapper {
+  position: absolute;
+  background-color: #333333;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  transform: translateY(-100%);
 }
 @media only screen and (min-width: 770px) {
   header {
@@ -523,13 +541,52 @@ header .mobile-menu-btn__text {
   color: #333333;
   text-decoration: none;
 }
-.nav.nav--desktop {
+.nav--desktop {
   display: none;
+}
+.nav--mobile__link {
+  color: #999999;
 }
 @media only screen and (min-width: 770px) {
   .nav.nav--desktop {
     display: block;
   }
+}
+
+.active-menu {
+  overflow-y: hidden;
+}
+.active-menu header .mobile-menu-btn {
+  color: #999999;
+  z-index: 2;
+}
+.active-menu header .mobile-menu-btn .hamburger {
+  display: inline-block;
+}
+.active-menu header .mobile-menu-btn .hamburger__bar {
+  background-color: #999999;
+}
+.active-menu header .mobile-menu-btn .hamburger__bar:first-child {
+  display: none;
+}
+.active-menu header .mobile-menu-btn .hamburger__bar:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.active-menu header .mobile-menu-btn .hamburger__bar:last-child {
+  transform: rotate(45deg);
+}
+.active-menu header .nav--mobile {
+  height: 100%;
+}
+.active-menu header .nav--mobile__list {
+  padding: 50px;
+}
+.active-menu .mobile-menu-wrapper {
+  transform: translateY(0);
+}
+.active-menu main,
+.active-menu aside {
+  z-index: -1;
 }
 
 main {
@@ -541,6 +598,7 @@ main {
   /* Chrome */
   -ms-flex: auto;
   height: 100vh;
+  z-index: 0;
 }
 main:before {
   content: "Hello";
@@ -565,8 +623,11 @@ main:after {
   transform: rotate(90deg);
 }
 main .section-panel {
-  padding-top: 100px;
   height: 100vh;
+}
+main .section-panel__inner {
+  height: 100%;
+  padding: 100px 2rem 0;
 }
 main .section-panel__heading {
   font-size: 32px;
@@ -625,6 +686,12 @@ aside {
 }
 #landing-panel .scroll-btn {
   position: absolute;
-  right: 100px;
-  bottom: 100px;
+  right: 15%;
+  bottom: 10%;
+}
+@media only screen and (min-width: 770px) {
+  #landing-panel .scroll-btn {
+    right: 5%;
+    bottom: 10%;
+  }
 }

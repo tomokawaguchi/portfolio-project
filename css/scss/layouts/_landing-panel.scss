@@ -7,7 +7,12 @@
 
 	.scroll-btn {
 		position: absolute;
-		right: 100px;
-		bottom: 100px;
+		right: 15%;
+		bottom: 10%;
+
+		@include mediaQuery("min", 770px) {
+			right: 5%;
+			bottom: 10%;
+		}
 	}
 }
