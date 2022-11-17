@@ -8,7 +8,7 @@ header {
 	z-index: 1;
 
 	.header-inner {
-		@include displayFlex(space-between, unset);
+		@include displayFlex(space-between, flex-end);
 		padding: 1.5rem 1rem;
 	}
 
@@ -60,6 +60,14 @@ header {
 		transform: translateY(-100%);
 	}
 
+	@include mediaQuery("min", 550px) {
+		.header-inner {
+			// position: fixed;
+			// flex-direction: column;
+			padding: 2rem;
+		}
+	}
+
 	@include mediaQuery("min", 770px) {
 		@include flex(0 0 200px);
 		@include displayFlex(center, unset);
@@ -68,6 +76,7 @@ header {
 		.header-inner {
 			position: fixed;
 			flex-direction: column;
+			padding: 4rem 1rem 1rem;
 		}
 
 		.logo-link {
@@ -153,5 +162,20 @@ header {
 	main,
 	aside {
 		z-index: -1;
+	}
+}
+
+// For the black background landing styling
+.black-bg {
+	header {
+		.mobile-menu-btn {
+			.hamburger__bar {
+				background-color: $grey;
+			}
+		}
+
+		.mobile-menu-btn__text {
+			color: $grey;
+		}
 	}
 }

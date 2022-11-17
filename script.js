@@ -14,32 +14,18 @@ mobileMenuLi.forEach((menu) => {
 	});
 });
 
-// const main = document.getElementById("main-section");
-// console.log(main);
-// const mainBeforeElement = getComputedStyle(main, "::before");
-// const mainAfterElement = getComputedStyle(main, "::after");
+// Remove/Add black bg class
+window.addEventListener("scroll", () => {
+	const aboutPanel = document.getElementById("about-panel");
+	const windowHeight = window.innerHeight;
+	const aboutPanelTop = aboutPanel.getBoundingClientRect().top;
+	const isClassActive = body.classList.contains("black-bg");
 
-// let panelTitleEng = mainBeforeElement.content;
-// let panelTitleJp = mainAfterElement.content;
+	if (windowHeight >= aboutPanelTop + windowHeight * 0.15 && isClassActive) {
+		body.classList.remove("black-bg");
+	}
 
-// console.log(panelTitleEng);
-// console.log(panelTitleJp);
-
-// const panelTexts = [
-// 	{
-// 		eng: "Hello",
-// 		jp: "こんにちは",
-// 	},
-// 	{
-// 		eng: "About",
-// 		jp: "概要",
-// 	},
-// 	{
-// 		eng: "Projects",
-// 		jp: "プロジェクト",
-// 	},
-// 	{
-// 		eng: "Contact",
-// 		jp: "お問い合わせ",
-// 	},
-// ];
+	if (windowHeight < aboutPanelTop + windowHeight * 0.15 && !isClassActive) {
+		body.classList.add("black-bg");
+	}
+});

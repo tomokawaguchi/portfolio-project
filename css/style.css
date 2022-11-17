@@ -427,6 +427,9 @@ body {
   font-weight: 400;
   background-color: #efefef;
 }
+body.black-bg {
+  background-color: #222222;
+}
 
 .custom-icon {
   font-family: "fontello";
@@ -446,7 +449,7 @@ header .header-inner {
   display: -ms-flexbox;
   display: -webkit-flex;
   justify-content: space-between;
-  align-items: unset;
+  align-items: flex-end;
   padding: 1.5rem 1rem;
 }
 header .logo-link {
@@ -504,6 +507,11 @@ header .mobile-menu-wrapper {
   height: 100vh;
   transform: translateY(-100%);
 }
+@media only screen and (min-width: 550px) {
+  header .header-inner {
+    padding: 2rem;
+  }
+}
 @media only screen and (min-width: 770px) {
   header {
     -webkit-box-flex: 0 0 200px;
@@ -525,6 +533,7 @@ header .mobile-menu-wrapper {
   header .header-inner {
     position: fixed;
     flex-direction: column;
+    padding: 4rem 1rem 1rem;
   }
   header .logo-link {
     margin-bottom: 20px;
@@ -589,6 +598,13 @@ header .mobile-menu-wrapper {
   z-index: -1;
 }
 
+.black-bg header .mobile-menu-btn .hamburger__bar {
+  background-color: #999999;
+}
+.black-bg header .mobile-menu-btn__text {
+  color: #999999;
+}
+
 main {
   -webkit-box-flex: auto;
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -599,28 +615,6 @@ main {
   -ms-flex: auto;
   height: 100vh;
   z-index: 0;
-}
-main:before {
-  content: "Hello";
-  position: absolute;
-  font-family: "Valery";
-  font-size: 200px;
-  color: #eaeaea;
-  left: -80px;
-  bottom: 30%;
-  z-index: -1;
-  transform: rotate(90deg);
-}
-main:after {
-  content: "こんにちは";
-  position: absolute;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 70px;
-  color: #eaeaea;
-  left: -120px;
-  bottom: 30%;
-  z-index: -1;
-  transform: rotate(90deg);
 }
 main .section-panel {
   height: 100vh;
@@ -637,25 +631,16 @@ main .section-panel__heading {
 main .section-panel__para {
   margin-bottom: 50px;
 }
-@media only screen and (min-width: 770px) {
-  main:before {
-    font-size: 250px;
-    left: 0;
-    bottom: 200px;
-    transform: rotate(0deg);
-  }
-  main:after {
-    font-size: 80px;
-    left: 0;
-    bottom: 80px;
-    transform: rotate(0deg);
-  }
-}
 
 aside {
   position: fixed;
   right: 1rem;
   top: 100px;
+}
+@media only screen and (min-width: 550px) {
+  aside {
+    right: 2rem;
+  }
 }
 @media only screen and (min-width: 770px) {
   aside {
@@ -681,8 +666,27 @@ aside {
   }
 }
 
-#landing-panel {
-  position: relative;
+#landing-panel:before {
+  content: "Hello";
+  position: absolute;
+  font-family: "Valery";
+  font-size: 160px;
+  color: #eaeaea;
+  left: -80px;
+  bottom: 30%;
+  z-index: -1;
+  transform: rotate(90deg);
+}
+#landing-panel:after {
+  content: "こんにちは";
+  position: absolute;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 40px;
+  color: #eaeaea;
+  left: -65px;
+  bottom: 30%;
+  z-index: -1;
+  transform: rotate(90deg);
 }
 #landing-panel .scroll-btn {
   position: absolute;
@@ -694,4 +698,34 @@ aside {
     right: 5%;
     bottom: 10%;
   }
+}
+@media only screen and (min-width: 450px) {
+  #landing-panel:before {
+    font-size: 200px;
+  }
+  #landing-panel:after {
+    font-size: 70px;
+    left: -120px;
+  }
+}
+@media only screen and (min-width: 770px) {
+  #landing-panel:before {
+    font-size: 250px;
+    left: 50px;
+    bottom: 200px;
+    transform: rotate(0deg);
+  }
+  #landing-panel:after {
+    font-size: 80px;
+    left: 50px;
+    bottom: 80px;
+    transform: rotate(0deg);
+  }
+}
+
+.black-bg #landing-panel:before, .black-bg #landing-panel:after {
+  color: #333333;
+}
+.black-bg #landing-panel .scroll-btn {
+  color: #999999;
 }

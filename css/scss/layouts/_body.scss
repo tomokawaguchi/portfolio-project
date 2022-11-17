@@ -18,6 +18,10 @@ body {
 	line-height: 26.4px;
 	font-weight: 400;
 	background-color: $white-bg;
+
+	&.black-bg {
+		background-color: $black-bg;
+	}
 }
 
 // Custom icon
