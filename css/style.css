@@ -453,6 +453,36 @@ template {
   color: #999999;
 }
 
+.work__link {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: unset;
+  display: inline-flex;
+}
+.work__thumbnail {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 260px;
+  height: 175px;
+}
+@media only screen and (min-width: 640px) {
+  .work__thumbnail {
+    width: 312px;
+    height: 210px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .work__thumbnail {
+    width: 374px;
+    height: 252px;
+  }
+}
+
 html {
   font-size: 100%;
   text-rendering: optimizeLegibility;
@@ -809,6 +839,16 @@ footer .copyright {
     padding: 70px 2rem 0;
   }
 }
+@media only screen and (min-width: 1440px) {
+  .section-panel__inner {
+    padding-left: 8rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .section-panel__inner {
+    padding-left: 15%;
+  }
+}
 
 #landing-panel {
   position: relative;
@@ -953,6 +993,90 @@ footer .copyright {
   #about-panel .tech-list {
     gap: 80px;
     max-width: 1240px;
+  }
+}
+
+#works-panel {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+#works-panel:before {
+  content: "Works";
+}
+#works-panel:after {
+  content: "実績";
+}
+#works-panel a {
+  text-decoration: none;
+  color: #333333;
+}
+#works-panel .featured-works-wrapper {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: unset;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+#works-panel .article-link-wrapper {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: unset;
+  width: 100%;
+  margin-bottom: 80px;
+}
+#works-panel .article-link-wrapper:nth-child(2n) {
+  justify-content: flex-end;
+}
+#works-panel .work {
+  margin-bottom: 20px;
+}
+#works-panel .cta-btn {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: unset;
+}
+#works-panel .cta-btn__text {
+  display: block;
+  font-size: 20px;
+  margin-right: 75px;
+}
+#works-panel .cta-btn .custom-icon {
+  transform: rotate(-90deg);
+  display: inline-block;
+  font-size: 64px;
+}
+@media only screen and (min-width: 770px) {
+  #works-panel .article-link-wrapper {
+    margin-bottom: 60px;
+  }
+  #works-panel .article-link-wrapper:nth-child(2n) {
+    justify-content: unset;
+  }
+  #works-panel .article-link-wrapper:nth-child(2n-1) {
+    justify-content: flex-end;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  #works-panel .article-link-wrapper:nth-child(3) {
+    margin-right: 100px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #works-panel .article-link-wrapper:nth-child(3) {
+    margin-right: 150px;
   }
 }
 

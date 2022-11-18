@@ -81,4 +81,14 @@
 			padding: 70px 2rem 0;
 		}
 	}
+	@include mediaQuery("min", 1440px) {
+		&__inner {
+			padding-left: 8rem;
+		}
+	}
+	@include mediaQuery("min", 1440px) {
+		&__inner {
+			padding-left: 15%;
+		}
+	}
 }

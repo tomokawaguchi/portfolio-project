@@ -8,6 +8,7 @@
 @use "./scss/components/socials-bar";
 @use "./scss/components/scroll-btn";
 @use "./scss/components/contacts-list";
+@use "./scss/components/work-item";
 
 //******************** Layouts ********************//
 @use "./scss/layouts/body";
@@ -18,6 +19,7 @@
 @use "./scss/layouts/global-panel";
 @use "./scss/layouts/landing-panel";
 @use "./scss/layouts/about-panel";
+@use "./scss/layouts/works-panel";
 @use "./scss/layouts/contact-panel";
 
 //******************** Pages ********************//
