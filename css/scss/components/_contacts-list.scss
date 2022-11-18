@@ -1,0 +1,39 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+
+// Contact list
+.contact-list {
+	@include displayFlex(unset, unset);
+	list-style: none;
+	flex-wrap: wrap;
+	padding: 0;
+
+	&__item {
+		@include flex(100%);
+		margin-bottom: 30px;
+	}
+
+	&__link {
+		@include displayFlex(unset, center);
+		text-decoration: none;
+		color: $black-light;
+	}
+
+	&__icon {
+		font-size: 18px;
+		padding-right: 15px;
+	}
+
+	// For the mobile menu specific stylings
+	&.contact-list--mobile {
+		padding: 0 50px;
+
+		.contact-list__item {
+			margin-bottom: 25px;
+		}
+
+		.contact-list__link {
+			color: $grey;
+		}
+	}
+}
