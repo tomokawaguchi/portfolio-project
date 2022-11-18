@@ -62,8 +62,6 @@ header {
 
 	@include mediaQuery("min", 550px) {
 		.header-inner {
-			// position: fixed;
-			// flex-direction: column;
 			padding: 2rem;
 		}
 	}
@@ -99,6 +97,7 @@ header {
 	}
 
 	&__link {
+		font-weight: 100;
 		color: $black-light;
 		text-decoration: none;
 	}
@@ -181,5 +180,9 @@ header {
 		.mobile-menu-btn__text {
 			color: $grey;
 		}
+	}
+
+	.nav__link {
+		color: $grey-white;
 	}
 }
