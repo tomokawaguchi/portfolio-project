@@ -1,0 +1,84 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+@import "../partials/typography";
+
+.section-panel {
+	position: relative;
+	height: 100vh;
+
+	&:before {
+		content: "";
+		position: absolute;
+		font-family: "Valery";
+		font-size: 160px;
+		color: #eaeaea;
+		left: -80px;
+		bottom: 25%;
+		z-index: -1;
+		transform: rotate(90deg);
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		font-family: "Noto Sans JP", sans-serif;
+		font-size: 40px;
+		color: #eaeaea;
+		left: -65px;
+		bottom: 20%;
+		z-index: -1;
+		transform: rotate(90deg);
+	}
+
+	&__inner {
+		padding: 100px 2rem 0;
+	}
+
+	&__heading {
+		font-size: 32px;
+		font-weight: 700;
+		margin-bottom: 50px;
+	}
+
+	&__para {
+		max-width: 250px;
+		margin-bottom: 50px;
+	}
+
+	@include mediaQuery("min", 450px) {
+		&:before {
+			font-size: 190px;
+			bottom: 30%;
+		}
+
+		&:after {
+			font-size: 60px;
+			left: -100px;
+			bottom: 24%;
+		}
+	}
+	@include mediaQuery("min", 510px) {
+		&__para {
+			max-width: 400px;
+		}
+	}
+	@include mediaQuery("min", 770px) {
+		&:before {
+			font-size: 240px;
+			left: -150px;
+			bottom: 200px;
+			transform: rotate(0deg);
+		}
+
+		&:after {
+			font-size: 70px;
+			left: -10%;
+			bottom: 80px;
+			transform: rotate(0deg);
+		}
+
+		&__inner {
+			padding: 70px 2rem 0;
+		}
+	}
+}

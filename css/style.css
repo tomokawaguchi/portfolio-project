@@ -406,6 +406,53 @@ template {
   transform: rotate(180deg);
 }
 
+.contact-list {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: unset;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.contact-list__item {
+  -webkit-box-flex: 100%;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 100%;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 100%;
+  /* Chrome */
+  -ms-flex: 100%;
+  margin-bottom: 30px;
+}
+.contact-list__link {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: center;
+  text-decoration: none;
+  color: #333333;
+}
+.contact-list__icon {
+  font-size: 18px;
+  padding-right: 15px;
+}
+.contact-list.contact-list--mobile {
+  padding: 0 50px;
+}
+.contact-list.contact-list--mobile .contact-list__item {
+  margin-bottom: 25px;
+}
+.contact-list.contact-list--mobile .contact-list__link {
+  color: #999999;
+}
+
 html {
   font-size: 100%;
   text-rendering: optimizeLegibility;
@@ -420,6 +467,7 @@ body {
   display: -webkit-flex;
   justify-content: unset;
   align-items: unset;
+  position: relative;
   font-family: "Noto Sans", sans-serif;
   color: #333333;
   font-size: 16px;
@@ -545,6 +593,8 @@ header .mobile-menu-wrapper {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.nav__menu {
   margin-bottom: 10px;
 }
 .nav__link {
@@ -589,7 +639,7 @@ header .mobile-menu-wrapper {
   height: 100%;
 }
 .active-menu header .nav--mobile__list {
-  padding: 50px;
+  padding: 100px 50px 50px;
 }
 .active-menu .mobile-menu-wrapper {
   transform: translateY(0);
@@ -614,29 +664,21 @@ main {
   -webkit-flex: auto;
   /* Chrome */
   -ms-flex: auto;
-  height: 100vh;
-  z-index: 0;
-}
-main .section-panel {
-  height: 100vh;
-}
-main .section-panel__inner {
   height: 100%;
-  padding: 100px 2rem 0;
-}
-main .section-panel__heading {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 50px;
-}
-main .section-panel__para {
-  margin-bottom: 50px;
+  z-index: 0;
 }
 
 aside {
-  position: fixed;
-  right: 1rem;
-  top: 100px;
+  display: none;
+}
+@media only screen and (min-width: 450px) {
+  aside {
+    display: block;
+    position: fixed;
+    right: 1rem;
+    top: 110px;
+    height: 100%;
+  }
 }
 @media only screen and (min-width: 550px) {
   aside {
@@ -667,61 +709,112 @@ aside {
   }
 }
 
-#landing-panel:before {
-  content: "Hello";
+footer {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #222222;
+  height: 40px;
+}
+footer .copyright {
+  display: block;
+  color: #eaeaea;
+  font-size: 14px;
+}
+
+.section-panel {
+  position: relative;
+  height: 100vh;
+}
+.section-panel:before {
+  content: "";
   position: absolute;
   font-family: "Valery";
   font-size: 160px;
   color: #eaeaea;
   left: -80px;
-  bottom: 30%;
+  bottom: 25%;
   z-index: -1;
   transform: rotate(90deg);
 }
-#landing-panel:after {
-  content: "こんにちは";
+.section-panel:after {
+  content: "";
   position: absolute;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 40px;
   color: #eaeaea;
   left: -65px;
-  bottom: 30%;
+  bottom: 20%;
   z-index: -1;
   transform: rotate(90deg);
 }
-#landing-panel .scroll-btn {
-  position: absolute;
-  right: 15%;
-  bottom: 10%;
+.section-panel__inner {
+  padding: 100px 2rem 0;
 }
-@media only screen and (min-width: 770px) {
-  #landing-panel .scroll-btn {
-    right: 5%;
-    bottom: 10%;
-  }
+.section-panel__heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+.section-panel__para {
+  max-width: 250px;
+  margin-bottom: 50px;
 }
 @media only screen and (min-width: 450px) {
-  #landing-panel:before {
-    font-size: 200px;
+  .section-panel:before {
+    font-size: 190px;
+    bottom: 30%;
   }
-  #landing-panel:after {
-    font-size: 70px;
-    left: -120px;
+  .section-panel:after {
+    font-size: 60px;
+    left: -100px;
+    bottom: 24%;
+  }
+}
+@media only screen and (min-width: 510px) {
+  .section-panel__para {
+    max-width: 400px;
   }
 }
 @media only screen and (min-width: 770px) {
-  #landing-panel:before {
-    font-size: 250px;
-    left: 50px;
+  .section-panel:before {
+    font-size: 240px;
+    left: -150px;
     bottom: 200px;
     transform: rotate(0deg);
   }
-  #landing-panel:after {
+  .section-panel:after {
     font-size: 70px;
-    left: 50px;
+    left: -10%;
     bottom: 80px;
     transform: rotate(0deg);
   }
+  .section-panel__inner {
+    padding: 70px 2rem 0;
+  }
+}
+
+#landing-panel {
+  position: relative;
+}
+#landing-panel:before {
+  content: "Hello";
+}
+#landing-panel:after {
+  content: "こんにちは";
+}
+#landing-panel .scroll-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 8%;
 }
 
 .black-bg #landing-panel:before, .black-bg #landing-panel:after {
@@ -729,4 +822,63 @@ aside {
 }
 .black-bg #landing-panel .scroll-btn {
   color: #999999;
+}
+
+#contact-panel {
+  position: relative;
+}
+#contact-panel:before {
+  content: "Contact";
+  font-size: 130px;
+  bottom: 33%;
+  left: -110px;
+}
+#contact-panel:after {
+  content: "お問い合わせ";
+}
+@media only screen and (min-width: 450px) {
+  #contact-panel:after {
+    left: -130px;
+    bottom: 27%;
+  }
+}
+@media only screen and (min-width: 550px) {
+  #contact-panel:before {
+    font-size: 160px;
+    bottom: 40%;
+  }
+  #contact-panel:after {
+    left: -110px;
+  }
+}
+@media only screen and (min-width: 770px) {
+  #contact-panel:before {
+    font-size: 180px;
+    left: -150px;
+    bottom: 200px;
+  }
+  #contact-panel:after {
+    font-size: 70px;
+    left: -10%;
+    bottom: 80px;
+  }
+}
+@media only screen and (min-width: 940px) {
+  #contact-panel .contact-list {
+    max-width: 800px;
+  }
+  #contact-panel .contact-list__item {
+    -webkit-box-flex: 50%;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 50%;
+    /* OLD - Firefox 19- */
+    -webkit-flex: 50%;
+    /* Chrome */
+    -ms-flex: 50%;
+  }
+}
+#contact-panel .scroll-btn {
+  position: absolute;
+  right: 20px;
+  bottom: 10%;
 }

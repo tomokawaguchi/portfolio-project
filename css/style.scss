@@ -7,12 +7,16 @@
 //******************** Components ********************//
 @use "./scss/components/socials-bar";
 @use "./scss/components/scroll-btn";
+@use "./scss/components/contacts-list";
 
 //******************** Layouts ********************//
 @use "./scss/layouts/body";
 @use "./scss/layouts/header";
 @use "./scss/layouts/main";
 @use "./scss/layouts/aside";
+@use "./scss/layouts/footer";
+@use "./scss/layouts/global-panel";
 @use "./scss/layouts/landing-panel";
+@use "./scss/layouts/contact-panel";
 
 //******************** Pages ********************//

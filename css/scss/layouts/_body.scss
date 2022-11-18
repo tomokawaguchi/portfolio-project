@@ -12,6 +12,7 @@ html {
 // Body
 body {
 	@include displayFlex(unset, unset);
+	position: relative;
 	font-family: $default-font;
 	color: $black-light;
 	font-size: 16px;

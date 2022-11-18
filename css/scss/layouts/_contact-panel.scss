@@ -1,0 +1,66 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+@import "../partials/typography";
+
+#contact-panel {
+	position: relative;
+
+	&:before {
+		content: "Contact";
+		font-size: 130px;
+		bottom: 33%;
+		left: -110px;
+	}
+
+	&:after {
+		content: "お問い合わせ";
+	}
+
+	@include mediaQuery("min", 450px) {
+		&:after {
+			left: -130px;
+			bottom: 27%;
+		}
+	}
+
+	@include mediaQuery("min", 550px) {
+		&:before {
+			font-size: 160px;
+			bottom: 40%;
+		}
+
+		&:after {
+			left: -110px;
+		}
+	}
+
+	@include mediaQuery("min", 770px) {
+		&:before {
+			font-size: 180px;
+			left: -150px;
+			bottom: 200px;
+		}
+		&:after {
+			font-size: 70px;
+			left: -10%;
+			bottom: 80px;
+		}
+	}
+
+	// Contact list
+	.contact-list {
+		@include mediaQuery("min", 940px) {
+			max-width: 800px;
+
+			&__item {
+				@include flex(50%);
+			}
+		}
+	}
+
+	.scroll-btn {
+		position: absolute;
+		right: 20px;
+		bottom: 10%;
+	}
+}
