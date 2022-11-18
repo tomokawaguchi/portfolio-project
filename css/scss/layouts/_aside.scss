@@ -1,0 +1,24 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+@import "../partials/typography";
+
+aside {
+	position: fixed;
+	right: 1rem;
+	top: 100px;
+
+	@include mediaQuery("min", 550px) {
+		right: 2rem;
+	}
+
+	@include mediaQuery("min", 770px) {
+		@include flex(0 0 100px);
+		@include displayFlex(center, unset);
+		position: relative;
+		right: unset;
+
+		.aside-inner {
+			position: fixed;
+		}
+	}
+}

@@ -5,9 +5,14 @@
 //******************** Partials ********************//
 
 //******************** Components ********************//
-@use "./scss/components/header";
+@use "./scss/components/socials-bar";
+@use "./scss/components/scroll-btn";
 
 //******************** Layouts ********************//
 @use "./scss/layouts/body";
+@use "./scss/layouts/header";
+@use "./scss/layouts/main";
+@use "./scss/layouts/aside";
+@use "./scss/layouts/landing-panel";
 
 //******************** Pages ********************//

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<script src="script.js" defer></script>
+		<title>Tomo's Portfolio</title>
+	</head>
+	<body id="body-section" class="black-bg">
+		<header>
+			<div class="header-inner">
+				<!-- For the logo link -->
+				<a href="./indx.html" class="logo-link">ToMo</a>
+
+				<!-- For the navigation -->
+				<nav class="nav nav--desktop">
+					<ul class="nav__list">
+						<li class="nav__menu">
+							<a class="nav__link" href="#landing-panel">Home</a>
+						</li>
+						<li class="nav__menu">
+							<a class="nav__link" href="#about-panel">About</a>
+						</li>
+						<li class="nav__menu">
+							<a class="nav__link" href="#works-panel">Works</a>
+						</li>
+						<li class="nav__menu">
+							<a class="nav__link" href="#contact-panel">Contact</a>
+						</li>
+					</ul>
+				</nav>
+
+				<!-- For the mobile menu -->
+				<button id="mobile-trigger" class="mobile-menu-btn" aria-label="Open Menu">
+					<div class="hamburger">
+						<div class="hamburger__bar"></div>
+						<div class="hamburger__bar"></div>
+						<div class="hamburger__bar"></div>
+					</div>
+					<span class="mobile-menu-btn__text">MENU</span>
+				</button>
+
+				<div class="mobile-menu-wrapper">
+					<!-- For mobile menu -->
+					<nav class="nav nav--mobile">
+						<ul id="mobile-menu-list" class="nav__list nav--mobile__list">
+							<li class="nav__menu nav--mobile__menu">
+								<a class="nav__link nav--mobile__link" href="#landing-panel">Home</a>
+							</li>
+							<li class="nav__menu nav--mobile__menu">
+								<a class="nav__link nav--mobile__link" href="#about-panel">About</a>
+							</li>
+							<li class="nav__menu nav--mobile__menu">
+								<a class="nav__link nav--mobile__link" href="#works-panel">Works</a>
+							</li>
+							<li class="nav__menu nav--mobile__menu">
+								<a class="nav__link nav--mobile__link" href="#contact-panel">Contact</a>
+							</li>
+						</ul>
+					</nav>
+
+					<!-- For the close button -->
+				</div>
+			</div>
+		</header>
+		<main id="main-section">
+			<section id="landing-panel" class="section-panel">
+				<div class="section-panel__inner">
+					<!-- For the scroll button -->
+					<a href="#about-panel" class="scroll-btn">
+						<span class="scroll-btn__text">Scroll Down</span>
+						<i class="custom-icon icon-arrow-down">&#xe877;</i>
+					</a>
+				</div>
+			</section>
+			<section id="about-panel" class="section-panel">
+				<div class="section-panel__inner">
+					<h2 class="section-panel__heading">About</h2>
+				</div>
+			</section>
+			<section id="works-panel" class="section-panel">
+				<div class="section-panel__inner">
+					<h2 class="section-panel__heading">Works</h2>
+				</div>
+			</section>
+			<section id="contact-panel" class="section-panel">
+				<div class="section-panel__inner">
+					<h2 class="section-panel__heading">Contact</h2>
+					<p class="section-panel__para">Here are the ways to get in touch with me!</p>
+
+					<!-- Contact list -->
+					<ul class="contact-list">
+						<li class="contact-list__item">
+							<a class="contact-list__link" href="mailto:tomo.k.dev@gmail.com">
+								<i class="socials__icon contact-list__icon">&#xe87a;</i>
+								<span>tomo.k.dev@gmail.com</span>
+							</a>
+						</li>
+						<li class="contact-list__item">
+							<a class="contact-list__link" href="https://github.com/tomokawaguchi" target="_blank">
+								<i class="socials__icon contact-list__icon">&#xe87b;</i>
+								<span>/tomoko-kawaguchi</span>
+							</a>
+						</li>
+						<li class="contact-list__item">
+							<a class="contact-list__link" href="https://www.linkedin.com/in/tomoko-kawaguchi/" target="_blank">
+								<i class="socials__icon contact-list__icon">&#xe87c;</i>
+								<span>/tomokawaguchi</span>
+							</a>
+						</li>
+					</ul>
+
+					<!-- For the scroll button -->
+					<a href="#landing-panel" class="scroll-btn scroll-btn--back">
+						<span class="scroll-btn__text">Back to Top</span>
+						<i class="custom-icon icon-arrow-up">&#xe877;</i>
+					</a>
+				</div>
+			</section>
+		</main>
+		<aside id="aside-section">
+			<div class="aside-inner">
+				<div class="socials">
+					<a class="socials__link" href="mailto:tomo.k.dev@gmail.com">
+						<i class="socials__icon socials__icon--email">&#xe87a;</i>
+					</a>
+					<a class="socials__link" href="https://github.com/tomokawaguchi" target="_blank">
+						<i class="socials__icon socials__icon--github">&#xe87b;</i>
+					</a>
+					<a class="socials__link" href="https://www.linkedin.com/in/tomoko-kawaguchi/" target="_blank">
+						<i class="socials__icon socials__icon--linkedin">&#xe87c;</i>
+					</a>
+				</div>
+			</div>
+		</aside>
+		<!-- <i class="custom-icon icon-link">&#xe800;</i>
+		<i class="custom-icon icon-close">&#xe878;</i> -->
+	</body>
+</html>

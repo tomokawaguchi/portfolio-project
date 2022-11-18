@@ -1,0 +1,25 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+
+.scroll-btn {
+	@include transitionEffect;
+	@include displayFlex(unset, center);
+	display: inline-flex;
+	flex-direction: column;
+	color: $black-light;
+	text-decoration: none;
+
+	&__text {
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+
+	.custom-icon {
+		@include transitionEffect;
+		font-size: 45px;
+
+		&.icon-arrow-up {
+			transform: rotate(180deg);
+		}
+	}
+}

@@ -1,0 +1,182 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+@import "../partials/typography";
+
+header {
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+
+	.header-inner {
+		@include displayFlex(space-between, flex-end);
+		padding: 1.5rem 1rem;
+	}
+
+	// For the logo
+	.logo-link {
+		font-family: $accent-font;
+		text-decoration: none;
+		color: $pink;
+		font-size: 32px;
+	}
+
+	// Hamburger button
+	.mobile-menu-btn {
+		@include buttonReset;
+		@include displayFlex(unset, center);
+		flex-direction: column;
+		cursor: pointer;
+
+		.hamburger {
+			@include displayFlex(space-evenly, unset);
+			flex-direction: column;
+			height: 30px;
+			width: 30px;
+
+			&__bar {
+				width: 100%;
+				height: 2px;
+				background-color: $black-light;
+			}
+		}
+
+		&__text {
+			font-size: 14px;
+		}
+
+		@include mediaQuery("min", 770px) {
+			display: none;
+		}
+	}
+
+	.mobile-menu-wrapper {
+		position: absolute;
+		background-color: $black-light;
+		right: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		height: 100vh;
+		transform: translateY(-100%);
+	}
+
+	@include mediaQuery("min", 550px) {
+		.header-inner {
+			// position: fixed;
+			// flex-direction: column;
+			padding: 2rem;
+		}
+	}
+
+	@include mediaQuery("min", 770px) {
+		@include flex(0 0 200px);
+		@include displayFlex(center, unset);
+		position: relative;
+
+		.header-inner {
+			position: fixed;
+			flex-direction: column;
+			padding: 4rem 1rem 1rem;
+		}
+
+		.logo-link {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+// For the navigation
+.nav {
+	&__list {
+		font-size: 20px;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		margin-bottom: 10px;
+	}
+
+	&__link {
+		color: $black-light;
+		text-decoration: none;
+	}
+
+	&--desktop {
+		display: none;
+	}
+
+	&--mobile {
+		&__link {
+			color: $grey;
+		}
+	}
+
+	@include mediaQuery("min", 770px) {
+		&.nav--desktop {
+			display: block;
+		}
+	}
+}
+
+// For the mobile active class
+.active-menu {
+	overflow-y: hidden;
+
+	header {
+		.mobile-menu-btn {
+			color: $grey;
+			z-index: 2;
+
+			.hamburger {
+				display: inline-block;
+
+				&__bar {
+					background-color: $grey;
+
+					&:first-child {
+						display: none;
+					}
+
+					&:nth-child(2) {
+						transform: rotate(-45deg);
+					}
+
+					&:last-child {
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+
+		.nav--mobile {
+			height: 100%;
+
+			&__list {
+				padding: 50px;
+			}
+		}
+	}
+
+	.mobile-menu-wrapper {
+		transform: translateY(0);
+	}
+
+	main,
+	aside {
+		z-index: -1;
+	}
+}
+
+// For the black background landing styling
+.black-bg {
+	header {
+		.mobile-menu-btn {
+			.hamburger__bar {
+				background-color: $grey;
+			}
+		}
+
+		.mobile-menu-btn__text {
+			color: $grey;
+		}
+	}
+}
