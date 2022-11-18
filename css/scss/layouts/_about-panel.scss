@@ -1,0 +1,118 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+@import "../partials/typography";
+
+#about-panel {
+	// position: relative;
+
+	&:before {
+		content: "About";
+	}
+
+	&:after {
+		content: "概要";
+	}
+
+	.about-content {
+		margin-bottom: 80px;
+
+		.col {
+			&__para {
+				margin: 20px 0;
+			}
+		}
+
+		&__img {
+			width: 100%;
+			margin: 80px 0;
+		}
+
+		@include mediaQuery("min", 1280px) {
+			@include displayFlex(unset, unset);
+
+			.col-1 {
+				@include flex(0 0 560px);
+				padding-right: 20px;
+			}
+
+			.col-2 {
+				@include flex(auto);
+				@include displayFlex(unset, center);
+				flex-direction: column;
+			}
+
+			&__img {
+				margin: 60px 0;
+			}
+		}
+	}
+
+	// For the desc list
+	dl {
+		display: grid;
+		grid-template-columns: 120px auto;
+		flex-wrap: wrap;
+
+		dt {
+			margin-right: 20px;
+			margin-bottom: 20px;
+
+			.dt-styling {
+				display: block;
+				padding-left: 10px;
+			}
+		}
+
+		dd {
+			margin: 0;
+			margin-bottom: 20px;
+
+			.bold-text {
+				display: block;
+			}
+		}
+
+		@include mediaQuery("min", 550px) {
+			grid-template-columns: 180px auto;
+
+			dt {
+				.dt-styling {
+					padding-left: 20px;
+				}
+			}
+		}
+
+		@include mediaQuery("min", 1040px) {
+			grid-template-columns: 200px auto;
+		}
+
+		@include mediaQuery("min", 1280px) {
+			grid-template-columns: 150px auto;
+		}
+	}
+
+	// Tech stack list
+	.tech-list {
+		display: grid;
+		gap: 30px;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		@include mediaQuery("min", 675px) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include mediaQuery("min", 770px) {
+			grid-template-columns: 1fr;
+		}
+
+		@include mediaQuery("min", 1060px) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include mediaQuery("min", 1280px) {
+			gap: 80px;
+			max-width: 1240px;
+		}
+	}
+}
