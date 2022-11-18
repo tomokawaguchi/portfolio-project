@@ -545,6 +545,7 @@ header .mobile-menu-wrapper {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-bottom: 10px;
 }
 .nav__link {
   color: #333333;
@@ -716,7 +717,7 @@ aside {
     transform: rotate(0deg);
   }
   #landing-panel:after {
-    font-size: 80px;
+    font-size: 70px;
     left: 50px;
     bottom: 80px;
     transform: rotate(0deg);
