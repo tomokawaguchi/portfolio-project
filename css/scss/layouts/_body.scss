@@ -25,6 +25,10 @@ body {
 		@include transitionEaseInOut(0.5s);
 		background-color: $black-bg;
 	}
+
+	&.active-modal {
+		overflow-y: hidden;
+	}
 }
 
 // Global class

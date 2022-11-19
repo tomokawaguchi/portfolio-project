@@ -12,7 +12,9 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="./css/style.css" />
-		<script src="script.js" defer></script>
+		<script type="module" src="./js/data.js" defer></script>
+		<script type="module" src="./js/script.js" defer></script>
+		<script type="module" src="./js/modal.js" defer></script>
 		<title>Home | Tomo's Portfolio</title>
 	</head>
 	<body id="body-section" class="black-bg">
@@ -27,7 +29,7 @@
 						<li class="nav__menu">
 							<a class="nav__link" href="./index.html#landing-panel">Home</a>
 						</li>
-						<!-- <li class="nav__menu">
+						<li class="nav__menu">
 							<a class="nav__link" href="./index.html#about-panel">About</a>
 						</li>
 						<li class="nav__menu">
@@ -35,7 +37,7 @@
 						</li>
 						<li class="nav__menu">
 							<a class="nav__link" href="./index.html#contact-panel">Contact</a>
-						</li> -->
+						</li>
 					</ul>
 				</nav>
 
@@ -46,7 +48,7 @@
 						<div class="hamburger__bar"></div>
 						<div class="hamburger__bar"></div>
 					</div>
-					<span class="mobile-menu-btn__text">MENU</span>
+					<span id="mobile-menu-btn__text">MENU</span>
 				</button>
 
 				<div class="mobile-menu-wrapper">
@@ -89,8 +91,6 @@
 							</li>
 						</ul>
 					</nav>
-
-					<!-- For the close button -->
 				</div>
 			</div>
 		</header>
@@ -108,90 +108,44 @@
 				<div class="section-panel__inner">
 					<h2 class="section-panel__heading">All Works</h2>
 
-					<div class="all-works-wrapper">
-						<div class="article-link-wrapper">
-							<div class="inner-wrapper">
-								<article class="work">
-									<a class="work__link" href="">
-										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
-										<span class="hover-text">Find Out More</span>
+					<div id="all-works-wrapper" class="all-works-wrapper">
+						<!-- HTML is generated via JavaScript -->
+					</div>
+
+					<!-- For the modal -->
+					<div id="modal-wrapper" class="modal-wrapper">
+						<div class="modal-wrapper__inner">
+							<div class="modal">
+								<h2 class="modal__title"></h2>
+								<div class="modal__links">
+									<a class="modal__links__link modal__links__link--live" href="">
+										<i class="custom-icon">&#xe800;</i>
+										<span class="modal__links__text"></span>
 									</a>
-								</article>
-								<a class="work__live-link" href="">
-									<i class="custom-icon work__live-link--link">&#xe800;</i>
-									<span class="work__live-link--text">https://affirmcare.com.au/</span>
-								</a>
-							</div>
-						</div>
-						<div class="article-link-wrapper">
-							<div class="inner-wrapper">
-								<article class="work">
-									<a class="work__link" href="">
-										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
-										<span class="hover-text">Find Out More</span>
+									<a class="modal__links__link modal__links__link--github" href="" target="_blank">
+										<i class="custom-icon">&#xe87b;</i>
+										<span class="modal__links__text"></span>
 									</a>
-								</article>
-								<a class="work__live-link" href="">
-									<i class="custom-icon work__live-link--link">&#xe800;</i>
-									<span class="work__live-link--text">https://affirmcare.com.au/</span>
-								</a>
+								</div>
+								<div class="modal__featured-img"></div>
+
+								<p class="modal__para"></p>
+
+								<div class="modal__snapshots">
+									<div class="modal__snapshots__item"></div>
+									<div class="modal__snapshots__item"></div>
+									<div class="modal__snapshots__item"></div>
+								</div>
 							</div>
-						</div>
-						<div class="article-link-wrapper">
-							<div class="inner-wrapper">
-								<article class="work">
-									<a class="work__link" href="">
-										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
-										<span class="hover-text">Find Out More</span>
-									</a>
-								</article>
-								<a class="work__live-link" href="">
-									<i class="custom-icon work__live-link--link">&#xe800;</i>
-									<span class="work__live-link--text">https://affirmcare.com.au/</span>
-								</a>
-							</div>
-						</div>
-						<div class="article-link-wrapper">
-							<div class="inner-wrapper">
-								<article class="work">
-									<a class="work__link" href="">
-										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
-										<span class="hover-text">Find Out More</span>
-									</a>
-								</article>
-								<a class="work__live-link" href="">
-									<i class="custom-icon work__live-link--link">&#xe800;</i>
-									<span class="work__live-link--text">https://affirmcare.com.au/</span>
-								</a>
-							</div>
-						</div>
-						<div class="article-link-wrapper">
-							<div class="inner-wrapper">
-								<article class="work">
-									<a class="work__link" href="">
-										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
-										<span class="hover-text">Find Out More</span>
-									</a>
-								</article>
-								<a class="work__live-link" href="">
-									<i class="custom-icon work__live-link--link">&#xe800;</i>
-									<span class="work__live-link--text">https://affirmcare.com.au/</span>
-								</a>
-							</div>
-						</div>
-						<div class="article-link-wrapper">
-							<div class="inner-wrapper">
-								<article class="work">
-									<a class="work__link" href="">
-										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
-										<span class="hover-text">Find Out More</span>
-									</a>
-								</article>
-								<a class="work__live-link" href="">
-									<i class="custom-icon work__live-link--link">&#xe800;</i>
-									<span class="work__live-link--text">https://affirmcare.com.au/</span>
-								</a>
-							</div>
+
+							<!-- Close button -->
+							<button id="modal-close-btn" class="modal-close-btn" aria-label="Close Modal">
+								<div class="hamburger">
+									<div class="hamburger__bar"></div>
+									<div class="hamburger__bar"></div>
+								</div>
+								<span class="modal-close-btn__text">CLOSE</span>
+							</button>
 						</div>
 					</div>
 				</div>

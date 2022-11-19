@@ -29,3 +29,8 @@ aside {
 		}
 	}
 }
+
+// active modal state
+.active-modal aside {
+	z-index: -1;
+}

@@ -1,10 +1,18 @@
 const body = document.getElementById("body-section");
-const mobileBtn = document.getElementById("mobile-trigger");
+const mobileBtnOpen = document.getElementById("mobile-trigger");
 const mobileMenuLi = document.querySelectorAll("#mobile-menu-list > li");
+const mobileMenuText = document.getElementById("mobile-menu-btn__text");
 
 // Add event listener on the mobile btn to toggle class on body tag
-mobileBtn.addEventListener("click", (event) => {
+mobileBtnOpen.addEventListener("click", () => {
 	body.classList.toggle("active-menu");
+
+	// Updating the mobile menu text
+	if (body.classList.contains("active-menu") && mobileMenuText) {
+		mobileMenuText.innerHTML = "CLOSE";
+	} else {
+		mobileMenuText.innerHTML = "MENU";
+	}
 });
 
 // Add event listener on the mobile menu to remove the active-menu class when it's clicked
@@ -47,5 +55,3 @@ window.addEventListener("scroll", () => {
 		}
 	}
 });
-
-// Works modal

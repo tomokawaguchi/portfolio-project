@@ -56,6 +56,13 @@
 	transition: all $time ease-in-out;
 }
 
+// Background image properties
+@mixin backgroundImgProperties {
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
 // Animation key frames
 @keyframes hoverAnimation {
 	from,
@@ -92,5 +99,12 @@
 
 	50% {
 		transform: translate(0, 0);
+	}
+}
+
+@keyframes modalAppear {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
 	}
 }

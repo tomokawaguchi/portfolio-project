@@ -8,8 +8,8 @@ header {
 	z-index: 1;
 
 	.header-inner {
-		@include displayFlex(space-between, flex-end);
-		padding: 1.5rem 1rem;
+		@include displayFlex(space-between, center);
+		padding: 2rem 1rem;
 	}
 
 	// For the logo
@@ -32,13 +32,15 @@ header {
 		cursor: pointer;
 
 		.hamburger {
-			@include displayFlex(space-evenly, unset);
+			@include transitionEaseInOut(0.2s);
+			@include displayFlex(space-between, unset);
 			flex-direction: column;
-			height: 30px;
-			width: 30px;
+			height: 20px;
+			margin-bottom: 10px;
 
 			&__bar {
-				width: 100%;
+				@include transitionEaseInOut(0.2s);
+				width: 30px;
 				height: 2px;
 				background-color: $black-light;
 			}
@@ -54,6 +56,7 @@ header {
 	}
 
 	.mobile-menu-wrapper {
+		@include transitionEaseInOut(0.3s);
 		position: absolute;
 		background-color: $black-light;
 		right: 0;
@@ -66,7 +69,7 @@ header {
 
 	@include mediaQuery("min", 550px) {
 		.header-inner {
-			padding: 2rem;
+			padding: 3rem 2rem;
 		}
 	}
 
@@ -154,21 +157,25 @@ header {
 
 			.hamburger {
 				@include transitionEaseInOut(0.5s);
-				display: inline-block;
+				display: inline-flex;
+				height: 23px;
+				width: 23px;
 
 				&__bar {
 					background-color: $grey;
 
 					&:first-child {
-						display: none;
+						transform: rotate(45deg);
+						transform-origin: left top;
 					}
 
 					&:nth-child(2) {
-						transform: rotate(-45deg);
+						display: none;
 					}
 
 					&:last-child {
-						transform: rotate(45deg);
+						transform: rotate(-45deg);
+						transform-origin: left bottom;
 					}
 				}
 			}
@@ -184,6 +191,7 @@ header {
 	}
 
 	.mobile-menu-wrapper {
+		@include transitionEaseInOut(0.5s);
 		transform: translateY(0);
 	}
 
@@ -202,7 +210,7 @@ header {
 			}
 		}
 
-		.mobile-menu-btn__text {
+		#mobile-menu-btn__text {
 			color: $grey;
 		}
 	}
@@ -214,4 +222,9 @@ header {
 			background-color: $grey-white;
 		}
 	}
+}
+
+// active modal state
+.active-modal header {
+	z-index: -1;
 }
