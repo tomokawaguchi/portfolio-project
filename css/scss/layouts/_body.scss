@@ -19,8 +19,10 @@ body {
 	line-height: 26.4px;
 	font-weight: 400;
 	background-color: $white-bg;
+	transition: all 0.5s ease-in-out;
 
 	&.black-bg {
+		@include transitionEaseInOut(0.5s);
 		background-color: $black-bg;
 	}
 }

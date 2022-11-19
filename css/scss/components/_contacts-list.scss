@@ -15,13 +15,20 @@
 
 	&__link {
 		@include displayFlex(unset, center);
+		@include transitionEaseInOut(0.2s);
+		display: inline-block;
 		text-decoration: none;
 		color: $black-light;
-	}
 
-	&__icon {
-		font-size: 18px;
-		padding-right: 15px;
+		&--icon {
+			@include transitionEaseInOut(0.2s);
+			font-size: 18px;
+			padding-right: 15px;
+		}
+
+		@include onHoverFocus {
+			animation: hoverAnimation 0.5s ease-in-out;
+		}
 	}
 
 	// For the mobile menu specific stylings

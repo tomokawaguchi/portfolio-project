@@ -31,7 +31,7 @@
 	}
 
 	&__inner {
-		padding: 100px 2rem 0;
+		padding: 100px 2rem 2rem;
 	}
 
 	&__heading {
@@ -42,7 +42,7 @@
 
 	&__para {
 		max-width: 250px;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 	}
 
 	@include mediaQuery("min", 450px) {
@@ -59,7 +59,7 @@
 	}
 	@include mediaQuery("min", 510px) {
 		&__para {
-			max-width: 400px;
+			max-width: 90%;
 		}
 	}
 	@include mediaQuery("min", 770px) {
@@ -78,7 +78,11 @@
 		}
 
 		&__inner {
-			padding: 70px 2rem 0;
+			padding: 70px 2rem 4rem;
+		}
+
+		&__para {
+			max-width: 100%;
 		}
 	}
 	@include mediaQuery("min", 1440px) {
@@ -90,5 +94,28 @@
 		&__inner {
 			padding-left: 15%;
 		}
+	}
+}
+
+// Common landing panel stylings across pages
+.page-landing-panel .scroll-btn {
+	@include transitionEaseInOut(0.5s);
+	position: absolute;
+	right: 20px;
+	bottom: 8%;
+
+	.custom-icon {
+		animation: slideDown 2s infinite ease-in-out;
+	}
+}
+// For the black background landing styling
+.black-bg .page-landing-panel {
+	&:before,
+	&:after {
+		color: $black-light;
+	}
+
+	.scroll-btn {
+		color: $grey;
 	}
 }

@@ -1,0 +1,17 @@
+@use "../../partials/mixins" as *;
+@import "../../partials/palette";
+@import "../../partials/typography";
+
+#landing-panel {
+	position: relative;
+
+	&:before {
+		@include transitionEaseInOut(0.5s);
+		content: "Hello";
+	}
+
+	&:after {
+		@include transitionEaseInOut(0.5s);
+		content: "こんにちは";
+	}
+}

@@ -17,15 +17,35 @@ mobileMenuLi.forEach((menu) => {
 // Remove/Add black bg class
 window.addEventListener("scroll", () => {
 	const aboutPanel = document.getElementById("about-panel");
+	const projectListPanel = document.getElementById("project-list-panel");
 	const windowHeight = window.innerHeight;
-	const aboutPanelTop = aboutPanel.getBoundingClientRect().top;
 	const isClassActive = body.classList.contains("black-bg");
 
-	if (windowHeight >= aboutPanelTop + windowHeight * 0.15 && isClassActive) {
-		body.classList.remove("black-bg");
+	// For home page
+	if (aboutPanel) {
+		const aboutPanelTop = aboutPanel.getBoundingClientRect().top;
+
+		if (windowHeight >= aboutPanelTop + windowHeight * 0.15 && isClassActive) {
+			body.classList.remove("black-bg");
+		}
+
+		if (windowHeight < aboutPanelTop + windowHeight * 0.15 && !isClassActive) {
+			body.classList.add("black-bg");
+		}
 	}
 
-	if (windowHeight < aboutPanelTop + windowHeight * 0.15 && !isClassActive) {
-		body.classList.add("black-bg");
+	// For project list page
+	if (projectListPanel) {
+		const projectListPanelTop = projectListPanel.getBoundingClientRect().top;
+
+		if (windowHeight >= projectListPanelTop + windowHeight * 0.15 && isClassActive) {
+			body.classList.remove("black-bg");
+		}
+
+		if (windowHeight < projectListPanelTop + windowHeight * 0.15 && !isClassActive) {
+			body.classList.add("black-bg");
+		}
 	}
 });
+
+// Works modal

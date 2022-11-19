@@ -1,6 +1,6 @@
-@use "../partials/mixins" as *;
-@import "../partials/palette";
-@import "../partials/typography";
+@use "../../partials/mixins" as *;
+@import "../../partials/palette";
+@import "../../partials/typography";
 
 #contact-panel {
 	position: relative;
@@ -49,6 +49,13 @@
 
 	// Contact list
 	.contact-list {
+		margin-top: 70px;
+
+		@include mediaQuery("min", 770px) {
+			&__item {
+				@include flex(0 1 340px);
+			}
+		}
 		@include mediaQuery("min", 940px) {
 			max-width: 800px;
 
@@ -62,5 +69,9 @@
 		position: absolute;
 		right: 20px;
 		bottom: 10%;
+
+		.custom-icon {
+			animation: slideUp 2s infinite ease-in-out;
+		}
 	}
 }

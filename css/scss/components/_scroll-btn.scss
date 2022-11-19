@@ -2,7 +2,7 @@
 @import "../partials/palette";
 
 .scroll-btn {
-	@include transitionEffect;
+	@include transitionEaseInOut(0.2s);
 	@include displayFlex(unset, center);
 	display: inline-flex;
 	flex-direction: column;
@@ -15,11 +15,7 @@
 	}
 
 	.custom-icon {
-		@include transitionEffect;
+		@include transitionEaseInOut(0.2s);
 		font-size: 45px;
-
-		&.icon-arrow-up {
-			transform: rotate(180deg);
-		}
 	}
 }

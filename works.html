@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+		<script src="script.js" defer></script>
+		<title>Home | Tomo's Portfolio</title>
+	</head>
+	<body id="body-section" class="black-bg">
+		<header>
+			<div class="header-inner">
+				<!-- For the logo link -->
+				<a href="./index.html" class="logo-link">ToMo</a>
+
+				<!-- For the navigation -->
+				<nav class="nav nav--desktop">
+					<ul class="nav__list">
+						<li class="nav__menu">
+							<a class="nav__link" href="./index.html#landing-panel">Home</a>
+						</li>
+						<!-- <li class="nav__menu">
+							<a class="nav__link" href="./index.html#about-panel">About</a>
+						</li>
+						<li class="nav__menu">
+							<a class="nav__link" href="./index.html#works-panel">Works</a>
+						</li>
+						<li class="nav__menu">
+							<a class="nav__link" href="./index.html#contact-panel">Contact</a>
+						</li> -->
+					</ul>
+				</nav>
+
+				<!-- For the mobile menu -->
+				<button id="mobile-trigger" class="mobile-menu-btn" aria-label="Open Menu">
+					<div class="hamburger">
+						<div class="hamburger__bar"></div>
+						<div class="hamburger__bar"></div>
+						<div class="hamburger__bar"></div>
+					</div>
+					<span class="mobile-menu-btn__text">MENU</span>
+				</button>
+
+				<div class="mobile-menu-wrapper">
+					<!-- For mobile menu -->
+					<nav class="nav nav--mobile">
+						<ul id="mobile-menu-list" class="nav__list nav--mobile__list">
+							<li class="nav__menu nav--mobile__menu">
+								<a class="nav__link nav--mobile__link" href="./index.html#landing-panel">Home</a>
+							</li>
+							<li class="nav__menu nav--mobile__menu">
+								<a class="nav__link nav--mobile__link" href="./index.html#about-panel">About</a>
+							</li>
+							<li class="nav__menu nav--mobile__menu">
+								<a class="nav__link nav--mobile__link" href="./index.html#works-panel">Works</a>
+							</li>
+							<li class="nav__menu nav--mobile__menu">
+								<a class="nav__link nav--mobile__link" href="./index.html#contact-panel">Contact</a>
+							</li>
+						</ul>
+
+						<!-- For socials -->
+						<ul class="contact-list contact-list--mobile">
+							<li class="contact-list__item">
+								<a class="contact-list__link" href="mailto:tomo.k.dev@gmail.com">
+									<i class="socials__icon contact-list__icon">&#xe87a;</i>
+									<span>tomo.k.dev@gmail.com</span>
+								</a>
+							</li>
+							<li class="contact-list__item">
+								<a class="contact-list__link" href="https://github.com/tomokawaguchi" target="_blank">
+									<i class="socials__icon contact-list__icon">&#xe87b;</i>
+									<span>/tomoko-kawaguchi</span>
+								</a>
+							</li>
+							<li class="contact-list__item">
+								<a class="contact-list__link" href="https://www.linkedin.com/in/tomoko-kawaguchi/" target="_blank">
+									<i class="socials__icon contact-list__icon">&#xe87c;</i>
+									<span>/tomokawaguchi</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+
+					<!-- For the close button -->
+				</div>
+			</div>
+		</header>
+		<main id="main-section">
+			<section id="works-landing-panel" class="section-panel page-landing-panel">
+				<div class="section-panel__inner">
+					<!-- For the scroll button -->
+					<a href="#project-list-panel" class="scroll-btn">
+						<span class="scroll-btn__text">Scroll Down</span>
+						<i class="custom-icon icon-arrow-down">&#xe877;</i>
+					</a>
+				</div>
+			</section>
+			<section id="project-list-panel" class="section-panel">
+				<div class="section-panel__inner">
+					<h2 class="section-panel__heading">All Works</h2>
+
+					<div class="all-works-wrapper">
+						<div class="article-link-wrapper">
+							<div class="inner-wrapper">
+								<article class="work">
+									<a class="work__link" href="">
+										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
+										<span class="hover-text">Find Out More</span>
+									</a>
+								</article>
+								<a class="work__live-link" href="">
+									<i class="custom-icon work__live-link--link">&#xe800;</i>
+									<span class="work__live-link--text">https://affirmcare.com.au/</span>
+								</a>
+							</div>
+						</div>
+						<div class="article-link-wrapper">
+							<div class="inner-wrapper">
+								<article class="work">
+									<a class="work__link" href="">
+										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
+										<span class="hover-text">Find Out More</span>
+									</a>
+								</article>
+								<a class="work__live-link" href="">
+									<i class="custom-icon work__live-link--link">&#xe800;</i>
+									<span class="work__live-link--text">https://affirmcare.com.au/</span>
+								</a>
+							</div>
+						</div>
+						<div class="article-link-wrapper">
+							<div class="inner-wrapper">
+								<article class="work">
+									<a class="work__link" href="">
+										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
+										<span class="hover-text">Find Out More</span>
+									</a>
+								</article>
+								<a class="work__live-link" href="">
+									<i class="custom-icon work__live-link--link">&#xe800;</i>
+									<span class="work__live-link--text">https://affirmcare.com.au/</span>
+								</a>
+							</div>
+						</div>
+						<div class="article-link-wrapper">
+							<div class="inner-wrapper">
+								<article class="work">
+									<a class="work__link" href="">
+										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
+										<span class="hover-text">Find Out More</span>
+									</a>
+								</article>
+								<a class="work__live-link" href="">
+									<i class="custom-icon work__live-link--link">&#xe800;</i>
+									<span class="work__live-link--text">https://affirmcare.com.au/</span>
+								</a>
+							</div>
+						</div>
+						<div class="article-link-wrapper">
+							<div class="inner-wrapper">
+								<article class="work">
+									<a class="work__link" href="">
+										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
+										<span class="hover-text">Find Out More</span>
+									</a>
+								</article>
+								<a class="work__live-link" href="">
+									<i class="custom-icon work__live-link--link">&#xe800;</i>
+									<span class="work__live-link--text">https://affirmcare.com.au/</span>
+								</a>
+							</div>
+						</div>
+						<div class="article-link-wrapper">
+							<div class="inner-wrapper">
+								<article class="work">
+									<a class="work__link" href="">
+										<div class="work__thumbnail" style="background-image: url(./images/affirm-featured.png)"></div>
+										<span class="hover-text">Find Out More</span>
+									</a>
+								</article>
+								<a class="work__live-link" href="">
+									<i class="custom-icon work__live-link--link">&#xe800;</i>
+									<span class="work__live-link--text">https://affirmcare.com.au/</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<aside id="aside-section">
+			<div class="aside-inner">
+				<ul class="socials">
+					<li class="socials__item">
+						<a class="socials__link" href="mailto:tomo.k.dev@gmail.com">
+							<i class="socials__icon socials__icon--email">&#xe87a;</i>
+						</a>
+					</li>
+					<li class="socials__item">
+						<a class="socials__link" href="https://github.com/tomokawaguchi" target="_blank">
+							<i class="socials__icon socials__icon--github">&#xe87b;</i>
+						</a>
+					</li>
+					<li class="socials__item">
+						<a class="socials__link" href="https://www.linkedin.com/in/tomoko-kawaguchi/" target="_blank">
+							<i class="socials__icon socials__icon--linkedin">&#xe87c;</i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<footer>
+			<span class="copyright">© 2022 Tomo</span>
+		</footer>
+	</body>
+</html>

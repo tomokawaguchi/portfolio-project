@@ -1,0 +1,42 @@
+@use "../../partials/mixins" as *;
+@import "../../partials/palette";
+@import "../../partials/typography";
+
+#project-list-panel {
+	position: relative;
+
+	// &:before {
+	// 	@include transitionEaseInOut(0.5s);
+	// 	content: "Works";
+	// 	font-size: 140px;
+	// }
+
+	// &:after {
+	// 	@include transitionEaseInOut(0.5s);
+	// 	content: "実績一覧";
+	// 	left: -30px;
+	// }
+
+	.all-works-wrapper {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		@include mediaQuery("min", 1040px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 30px;
+
+			.article-link-wrapper:nth-child(2n) {
+				justify-content: unset;
+			}
+		}
+
+		@include mediaQuery("min", 1300px) {
+			grid-template-columns: repeat(3, 1fr);
+
+			.article-link-wrapper .work__thumbnail {
+				width: 260px;
+				height: 175px;
+			}
+		}
+	}
+}
