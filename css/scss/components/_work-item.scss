@@ -23,7 +23,6 @@
 			@include transitionEaseInOut(0.4s);
 			position: relative;
 			display: inline-flex;
-			width: 100%;
 
 			.hover-text {
 				@include transitionEaseInOut(0.4s);

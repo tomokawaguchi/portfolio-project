@@ -107,7 +107,11 @@ function mapWorks(data) {
 		workList[index].style.backgroundImage = `url(../images/${work["featuredImage"]})`;
 
 		const urls = document.getElementsByClassName("work__live-link--text");
-		urls[index].innerHTML = `${work.liveLink}`;
+		if (work.liveLink) {
+			urls[index].innerHTML = `${work.liveLink}`;
+		} else {
+			urls[index].innerHTML = "N/A";
+		}
 
 		// Adding data id based on the index
 		const workLink = document.getElementsByClassName("work__link");
@@ -124,20 +128,51 @@ function mapModalData(data, event) {
 	const linkTexts = modal.querySelectorAll(".modal__links__text");
 	const featured = modal.querySelector(".modal__featured-img");
 	const paraText = modal.querySelector(".modal__para");
-	const snapshotsList = modal.querySelectorAll(".modal__snapshots__item");
 
 	const dataId = event.target.getAttribute("data-id");
 	const currentData = data.filter((each) => each.id == dataId);
 	const { name, desc, liveLink, repo, featuredImage, snapshots } = currentData[0];
 
+	// Title text
 	title.innerHTML = name;
-	live.href = liveLink;
-	githubLink.href = repo;
+
+	// Live link
+	if (liveLink === "") {
+		live.style.display = "none";
+	} else {
+		live.href = liveLink;
+	}
+
+	// Github link
+	if (repo === "") {
+		githubLink.style.display = "none";
+	} else {
+		githubLink.href = repo;
+	}
+
+	// Links text
 	linkTexts[0].innerHTML = liveLink;
 	linkTexts[1].innerHTML = repo;
+
+	// Paragraph text
 	paraText.innerHTML = desc;
-	featured.style.backgroundImage = `url(../images/${featuredImage})`;
-	snapshotsList.forEach((snapshot, index) => {
-		snapshot.style.backgroundImage = `url(../images/${snapshots[index]})`;
-	});
+
+	// Featured image
+	if (featuredImage) {
+		featured.style.backgroundImage = `url(../images/${featuredImage})`;
+	} else {
+		featured.style.display = "none";
+	}
+
+	// Snapshot images
+	if (snapshots.length > 0) {
+		console.log(snapshots.length);
+		snapshots.forEach((each) => {
+			const snapshotsWrapper = modal.querySelector(".modal__snapshots");
+			const div = document.createElement("div");
+			div.classList.add("modal__snapshots__item");
+			div.style.backgroundImage = `url(../images/${each})`;
+			snapshotsWrapper.appendChild(div);
+		});
+	}
 }
