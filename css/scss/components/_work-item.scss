@@ -1,0 +1,117 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+
+.article-link-wrapper {
+	@include displayFlex(unset, unset);
+	width: 100%;
+	margin-bottom: 80px;
+
+	a {
+		text-decoration: none;
+		color: $black-light;
+	}
+
+	&:nth-child(2n) {
+		justify-content: flex-end;
+	}
+
+	.work {
+		margin-bottom: 20px;
+
+		&__link {
+			@include displayFlex(unset, unset);
+			@include transitionEaseInOut(0.4s);
+			position: relative;
+			display: inline-flex;
+			width: 100%;
+
+			.hover-text {
+				@include transitionEaseInOut(0.4s);
+				@include displayFlex(center, center);
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				color: $white;
+				background-color: rgba($color: #000000, $alpha: 0.8);
+				visibility: hidden;
+				opacity: 0;
+				pointer-events: none;
+			}
+
+			@include onHoverFocus {
+				.hover-text {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+
+		&__thumbnail {
+			background-color: $grey;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			width: 260px;
+			height: 175px;
+			pointer-events: none;
+		}
+
+		&__live-link {
+			@include transitionEaseInOut(0.3s);
+			display: inline-flex;
+			position: relative;
+			font-size: 14px;
+			color: $grey;
+
+			&:after {
+				@include transitionEaseInOut(0.3s);
+				position: absolute;
+				content: "";
+				bottom: -3px;
+				left: 0;
+				background-color: $black-light;
+				width: 0;
+				height: 1px;
+			}
+
+			.custom-icon {
+				@include transitionEaseInOut(0.3s);
+				font-size: 20px;
+				color: $grey;
+			}
+
+			&--text {
+				display: block;
+				word-break: break-all;
+				max-width: 200px;
+				padding-left: 25px;
+			}
+
+			@include onHoverFocus {
+				color: $black-light;
+
+				&:after {
+					width: 100%;
+				}
+
+				.custom-icon {
+					color: $black-light;
+				}
+			}
+		}
+
+		@include mediaQuery("min", 640px) {
+			&__live-link--text {
+				max-width: 260px;
+			}
+		}
+
+		@include mediaQuery("min", 1300px) {
+			&__live-link--text {
+				max-width: 330px;
+			}
+		}
+	}
+}

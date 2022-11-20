@@ -1,0 +1,214 @@
+@use "../partials/mixins" as *;
+@import "../partials/palette";
+
+// Modal
+.modal-wrapper {
+	@include transitionEaseInOut(0.4s);
+	@include displayFlex(center, center);
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 3;
+	height: 100vh;
+	display: none;
+	animation: modalAppear 350ms ease-in 1;
+
+	&__inner {
+		position: relative;
+		width: 88%;
+		height: 88%;
+		background-color: $white-bg;
+		border-radius: 10px;
+		padding: 30px 10px;
+		overflow-y: scroll;
+	}
+
+	.modal-close-btn {
+		@include buttonReset;
+		@include displayFlex(unset, center);
+		flex-direction: column;
+		position: absolute;
+		right: 20px;
+		top: 30px;
+		cursor: pointer;
+
+		.hamburger {
+			@include transitionEaseInOut(0.2s);
+			@include displayFlex(space-between, unset);
+			flex-direction: column;
+			display: inline-flex;
+			margin-bottom: 10px;
+			height: 23px;
+			width: 23px;
+
+			&__bar {
+				@include transitionEaseInOut(0.2s);
+				width: 30px;
+				height: 2px;
+				background-color: $black-light;
+
+				&:first-child {
+					transform: rotate(45deg);
+					transform-origin: left top;
+				}
+
+				&:last-child {
+					transform: rotate(-45deg);
+					transform-origin: left bottom;
+				}
+			}
+		}
+
+		&__text {
+			font-size: 14px;
+		}
+	}
+
+	@include mediaQuery("min", 770px) {
+		&__inner {
+			width: 80%;
+			height: 80%;
+			padding: 50px;
+		}
+
+		.modal-close-btn {
+			right: 40px;
+			top: 40px;
+		}
+	}
+}
+
+.modal {
+	color: $black-light;
+	max-width: 1000px;
+	margin: 0 auto;
+
+	&__title {
+		max-width: 80%;
+	}
+
+	&__links {
+		@include displayFlex(unset, unset);
+		display: inline-flex;
+		flex-direction: column;
+		margin: 20px 0;
+
+		&__link {
+			position: relative;
+			display: inline-block;
+			text-decoration: none;
+			color: $grey;
+			width: fit-content;
+			margin-bottom: 20px;
+
+			&:after {
+				@include transitionEaseInOut(0.3s);
+				position: absolute;
+				content: "";
+				bottom: -3px;
+				left: 0;
+				color: $black-light;
+				background-color: $black-light;
+				width: 0;
+				height: 1px;
+			}
+
+			.custom-icon {
+				margin-right: 10px;
+			}
+
+			@include onHoverFocus {
+				color: $black-light;
+
+				&:after {
+					width: 100%;
+				}
+			}
+		}
+
+		&__text {
+			word-break: break-all;
+		}
+	}
+
+	&__featured-img {
+		@include backgroundImgProperties;
+		background-image: url(./images/affirm-featured.png);
+		background-size: contain;
+		width: 100%;
+		height: 220px;
+		margin: 20px 0;
+	}
+
+	&__para {
+		margin: 40px 0;
+	}
+
+	&__snapshots {
+		@include displayFlex(flex-start, unset);
+		flex-wrap: wrap;
+
+		&__item {
+			@include backgroundImgProperties;
+			@include flex(100%);
+			background-size: contain;
+			height: 600px;
+			width: 100%;
+			margin-bottom: 30px;
+		}
+	}
+
+	@include mediaQuery("min", 600px) {
+		&__featured-img {
+			height: 270px;
+		}
+
+		&__snapshots {
+			flex-wrap: unset;
+
+			&__item {
+				@include flex(0 0 50%);
+			}
+		}
+	}
+
+	@include mediaQuery("min", 770px) {
+		&__featured-img {
+			height: 340px;
+		}
+
+		&__snapshots {
+			justify-content: space-around;
+
+			&__item {
+				@include flex(0 0 250px);
+			}
+		}
+	}
+
+	@include mediaQuery("min", 1140px) {
+		&__featured-img {
+			height: 470px;
+		}
+
+		&__snapshots {
+			max-width: 1040px;
+			margin: 0 auto;
+		}
+	}
+
+	@include mediaQuery("min", 1440px) {
+		&__featured-img {
+			height: 520px;
+		}
+	}
+}
+
+// Active modal class
+.active-modal .modal-wrapper {
+	display: flex;
+	@include transitionEaseInOut(0.4s);
+}

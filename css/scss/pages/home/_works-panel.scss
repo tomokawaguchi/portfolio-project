@@ -1,0 +1,87 @@
+@use "../../partials/mixins" as *;
+@import "../../partials/palette";
+@import "../../partials/typography";
+
+#works-panel {
+	display: inline-flex;
+	flex-direction: column;
+	width: 100%;
+
+	&:before {
+		content: "Works";
+	}
+
+	&:after {
+		content: "実績";
+	}
+
+	.featured-works-wrapper {
+		@include displayFlex(unset, unset);
+		flex-wrap: wrap;
+		max-width: 1200px;
+	}
+
+	.article-link-wrapper {
+		@include mediaQuery("min", 640px) {
+			.work__thumbnail {
+				width: 312px;
+				height: 210px;
+			}
+		}
+		@include mediaQuery("min", 770px) {
+			margin-bottom: 60px;
+
+			&:nth-child(2n) {
+				justify-content: unset;
+			}
+
+			&:nth-child(2n - 1) {
+				justify-content: flex-end;
+			}
+		}
+		@include mediaQuery("min", 1000px) {
+			&:nth-child(3) {
+				margin-right: 100px;
+			}
+		}
+		@include mediaQuery("min", 1300px) {
+			.work__thumbnail {
+				width: 374px;
+				height: 252px;
+			}
+		}
+		@include mediaQuery("min", 1400px) {
+			&:nth-child(3) {
+				margin-right: 150px;
+			}
+		}
+	}
+
+	// For cta btn
+	.cta-btn {
+		@include displayFlex(unset, unset);
+		@include transitionEaseInOut(0.2s);
+		display: inline-flex;
+		text-decoration: none;
+		color: $black-light;
+
+		&__text {
+			@include transitionEaseInOut(0.2s);
+			display: block;
+			font-size: 20px;
+			margin-right: 65px;
+		}
+
+		.custom-icon {
+			transform: rotate(-90deg);
+			display: inline-block;
+			font-size: 64px;
+		}
+
+		@include onHoverFocus {
+			.cta-btn__text {
+				margin-right: 85px;
+			}
+		}
+	}
+}

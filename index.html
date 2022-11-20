@@ -5,33 +5,39 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- Google fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="./css/style.css" />
-		<script src="script.js" defer></script>
-		<title>Tomo's Portfolio</title>
+		<link rel="icon" type="image/png" href="./images/favicon.png" />
+		<script type="module" src="./js/data.js" defer></script>
+		<script type="module" src="./js/script.js" defer></script>
+		<script type="module" src="./js/modal.js" defer></script>
+		<title>Tomo's Portfolio | Home</title>
 	</head>
-	<body id="body-section" class="black-bg">
+	<body id="body-section" class="black-bg home-page">
 		<header>
 			<div class="header-inner">
 				<!-- For the logo link -->
-				<a href="./indx.html" class="logo-link">ToMo</a>
+				<a href="./index.html" class="logo-link">ToMo</a>
 
 				<!-- For the navigation -->
 				<nav class="nav nav--desktop">
 					<ul class="nav__list">
 						<li class="nav__menu">
-							<a class="nav__link" href="#landing-panel">Home</a>
+							<a class="nav__link" href="./index.html#landing-panel">Home</a>
 						</li>
 						<li class="nav__menu">
-							<a class="nav__link" href="#about-panel">About</a>
+							<a class="nav__link" href="/index.html#about-panel">About</a>
 						</li>
 						<li class="nav__menu">
-							<a class="nav__link" href="#works-panel">Works</a>
+							<a class="nav__link" href="/index.html#works-panel">Works</a>
 						</li>
 						<li class="nav__menu">
-							<a class="nav__link" href="#contact-panel">Contact</a>
+							<a class="nav__link" href="/index.html#contact-panel">Contact</a>
 						</li>
 					</ul>
 				</nav>
@@ -43,7 +49,7 @@
 						<div class="hamburger__bar"></div>
 						<div class="hamburger__bar"></div>
 					</div>
-					<span class="mobile-menu-btn__text">MENU</span>
+					<span id="mobile-menu-btn__text">MENU</span>
 				</button>
 
 				<div class="mobile-menu-wrapper">
@@ -51,16 +57,16 @@
 					<nav class="nav nav--mobile">
 						<ul id="mobile-menu-list" class="nav__list nav--mobile__list">
 							<li class="nav__menu nav--mobile__menu">
-								<a class="nav__link nav--mobile__link" href="#landing-panel">Home</a>
+								<a class="nav__link nav--mobile__link" href="./index.html#landing-panel">Home</a>
 							</li>
 							<li class="nav__menu nav--mobile__menu">
-								<a class="nav__link nav--mobile__link" href="#about-panel">About</a>
+								<a class="nav__link nav--mobile__link" href="./index.html#about-panel">About</a>
 							</li>
 							<li class="nav__menu nav--mobile__menu">
-								<a class="nav__link nav--mobile__link" href="#works-panel">Works</a>
+								<a class="nav__link nav--mobile__link" href="./index.html#works-panel">Works</a>
 							</li>
 							<li class="nav__menu nav--mobile__menu">
-								<a class="nav__link nav--mobile__link" href="#contact-panel">Contact</a>
+								<a class="nav__link nav--mobile__link" href="./index.html#contact-panel">Contact</a>
 							</li>
 						</ul>
 
@@ -86,13 +92,11 @@
 							</li>
 						</ul>
 					</nav>
-
-					<!-- For the close button -->
 				</div>
 			</div>
 		</header>
 		<main id="main-section">
-			<section id="landing-panel" class="section-panel">
+			<section id="landing-panel" class="section-panel page-landing-panel">
 				<div class="section-panel__inner">
 					<!-- For the scroll button -->
 					<a href="#about-panel" class="scroll-btn">
@@ -103,33 +107,33 @@
 			</section>
 			<section id="about-panel" class="section-panel">
 				<div class="section-panel__inner">
-					<h2 class="section-panel__heading">About</h2>
+					<h2 class="section-panel__heading animation-on-scroll">About</h2>
 
 					<div class="about-content">
-						<div class="col col-1">
+						<div class="col col-1 animation-on-scroll">
 							<div class="col__para">Tomoko Kawaguchi | 川口知子</div>
-							<div class="col__para">
-								Former website project manager turned frontend web developer and a full stack developer upon completion of the training course at
-								_Nology.
-							</div>
-							<div class="col__para">
-								I have conducted some freelance works to gain practical experiences every now and then while teaching English to Japanese children.
-							</div>
-							<div class="col__para">Passionate about building digital products that help people and making things pretty in the frontend.</div>
-							<div class="col__para">Originally from a country side in Japan where there are lots of wild deers in the park!</div>
+							<p class="col__para">
+								Former website project manager turned web developer and full stack developer upon completion of my training course at _nology.
+							</p>
+							<p class="col__para">
+								I have some freelance work experience as a junior frontend developer. Most recently, I have worked for a marketing agency in Perth as
+								a freelance web developer mainly on building static websites with HTML, CSS/SCSS and JavaScript.
+							</p>
+							<p class="col__para">Passionate about building digital products that help people and making things pretty in the frontend.</p>
+							<p class="col__para">Originally from country side in Japan where there are lots of wild deers in the park!</p>
 
-							<img class="about-content__img" src="./images/deers.jpg" alt="deers" />
+							<img class="about-content__img animation-on-scroll" src="./images/deers.jpg" alt="deers" />
 						</div>
-						<div class="col col-2">
+						<div class="col col-2 animation-on-scroll">
 							<dl>
 								<dt>Jul 2015<span class="dt-styling">- Sep 2017</span></dt>
-								<dd><span class="bold-text">MBA</span> Edith Cowan University</dd>
+								<dd><span class="bold-text">MBA International</span> Edith Cowan University</dd>
 								<dt>Jul 2017<span class="dt-styling">- Oct 2017</span></dt>
 								<dd><span class="bold-text">Customer Support</span> Burning Fruit, WA</dd>
 								<dt>Oct 2017<span class="dt-styling">- Aug 2019</span></dt>
-								<dd><span class="bold-text">Project Manager</span> Flexi Tennis Leagues, WA</dd>
-								<dt>Jun 2020<span class="dt-styling">- Jul 2020</span></span></dt>
-								<dd><span class="bold-text">Junior Frontend Developer</span> Edith Cowan University</dd>
+								<dd><span class="bold-text">Project Manager</span> Burning Fruit, WA</dd>
+								<dt>Jun 2020<span class="dt-styling">- Jul 2020</span></dt>
+								<dd><span class="bold-text">Junior Frontend Developer</span> Flexi Tennis Leagues, WA</dd>
 								<dt>Aug 2021<span class="dt-styling">- Nov 2021</span></dt>
 								<dd><span class="bold-text">Junior Web Developer</span> MadeByHaT, WA</dd>
 								<dt>Dec 2021<span class="dt-styling">- Aug 2022</span></dt>
@@ -138,24 +142,49 @@
 						</div>
 					</div>
 
-					<h2 class="section-panel__heading">Tech Stack</h2>
+					<h2 class="section-panel__heading animation-on-scroll">Tech Stack</h2>
 					<div class="tech-stack-content">
 						<ul class="tech-list">
-							<li class="tech-list__item">
-								<h3 class="tech-list__item--title">JavaScript</h3>
-								<p class="tech-list__item--para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
+							<li class="tech-list__item animation-on-scroll">
+								<h3 class="tech-list__item--title">JavaScript (Vanilla / React / Gatsby)</h3>
+								<p class="tech-list__item--para">
+									Through various freelance works and _nology training course, I have become proficient in Javascript. I’ve also delved into ReactJS
+									and have built a website in GasbyJS for a SaaS startup in Australia. One of my latest personal work in ReactJS is "PROJECT NAME".
+								</p>
 							</li>
-							<li class="tech-list__item">
-								<h3 class="tech-list__item--title">React.js / Gatsby JS</h3>
-								<p class="tech-list__item--para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
-							</li>
-							<li class="tech-list__item">
+							<li class="tech-list__item animation-on-scroll">
 								<h3 class="tech-list__item--title">Java / Spring</h3>
-								<p class="tech-list__item--para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
+								<p class="tech-list__item--para">
+									I have started learning Java for android development through Udacity course and then brushed it up further through _nology training
+									course. Through _nology course, I was exposed to backend development in those languages. The application/project that I have built
+									with Java/Spring is "PROJECT NAME".
+								</p>
 							</li>
-							<li class="tech-list__item">
+							<li class="tech-list__item animation-on-scroll">
 								<h3 class="tech-list__item--title">HTML5 / CSS3 / SCSS</h3>
-								<p class="tech-list__item--para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure.</p>
+								<p class="tech-list__item--para">
+									I have strong proficiency with HTML5, CSS3 and SCSS. I have educated myself and then managed to improve them further through my
+									freelance projects where I was developing static websites for Key2Creative.
+								</p>
+							</li>
+							<li class="tech-list__item animation-on-scroll">
+								<h3 class="tech-list__item--title">Other Tech Stack & Systems</h3>
+								<div class="inner-list-wrapper">
+									<ul class="inner-list inner-list__tech">
+										<li class="tech-detailed-list__item">Node.js</li>
+										<li class="tech-detailed-list__item">jQuery</li>
+										<li class="tech-detailed-list__item">PHP</li>
+									</ul>
+
+									<ul class="inner-list inner-list__system">
+										<li class="tech-detailed-list__item">JIRA</li>
+										<li class="tech-detailed-list__item">Slack</li>
+										<li class="tech-detailed-list__item">Figma</li>
+										<li class="tech-detailed-list__item">AdobeXD</li>
+										<li class="tech-detailed-list__item">Trello</li>
+										<li class="tech-detailed-list__item">Freshdesk</li>
+									</ul>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -163,32 +192,122 @@
 			</section>
 			<section id="works-panel" class="section-panel">
 				<div class="section-panel__inner">
-					<h2 class="section-panel__heading">Works</h2>
-					<i class="custom-icon icon-link">&#xe800;</i>
+					<h2 class="section-panel__heading animation-on-scroll">Featured Works</h2>
+
+					<div id="featured-works-wrapper" class="featured-works-wrapper">
+						<div class="article-link-wrapper animation-on-scroll">
+							<div class="inner-wrapper">
+								<article class="work">
+									<a class="work__link" href="">
+										<div class="work__thumbnail"></div>
+										<span class="hover-text">Find Out More</span>
+									</a>
+								</article>
+								<a class="work__live-link" href="">
+									<i class="custom-icon work__live-link--link">&#xe800;</i>
+									<span class="work__live-link--text"></span>
+								</a>
+							</div>
+						</div>
+						<div class="article-link-wrapper animation-on-scroll">
+							<div class="inner-wrapper">
+								<article class="work">
+									<a class="work__link" href="">
+										<div class="work__thumbnail"></div>
+										<span class="hover-text">Find Out More</span>
+									</a>
+								</article>
+								<a class="work__live-link" href="">
+									<i class="custom-icon work__live-link--link">&#xe800;</i>
+									<span class="work__live-link--text"></span>
+								</a>
+							</div>
+						</div>
+						<div class="article-link-wrapper animation-on-scroll">
+							<div class="inner-wrapper">
+								<article class="work">
+									<a class="work__link" href="">
+										<div class="work__thumbnail"></div>
+										<span class="hover-text">Find Out More</span>
+									</a>
+								</article>
+								<a class="work__live-link" href="">
+									<i class="custom-icon work__live-link--link">&#xe800;</i>
+									<span class="work__live-link--text"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- For the modal -->
+					<div id="modal-wrapper" class="modal-wrapper">
+						<div class="modal-wrapper__inner">
+							<div class="modal">
+								<h2 class="modal__title"></h2>
+								<div class="modal__links">
+									<a class="modal__links__link modal__links__link--live" href="">
+										<i class="custom-icon">&#xe800;</i>
+										<span class="modal__links__text"></span>
+									</a>
+									<a class="modal__links__link modal__links__link--github" href="" target="_blank">
+										<i class="custom-icon">&#xe87b;</i>
+										<span class="modal__links__text"></span>
+									</a>
+								</div>
+								<div class="modal__featured-img"></div>
+
+								<p class="modal__para"></p>
+
+								<div class="modal__snapshots">
+									<div class="modal__snapshots__item"></div>
+									<div class="modal__snapshots__item"></div>
+									<div class="modal__snapshots__item"></div>
+								</div>
+							</div>
+
+							<!-- Close button -->
+							<button id="modal-close-btn" class="modal-close-btn" aria-label="Close Modal">
+								<div class="hamburger">
+									<div class="hamburger__bar"></div>
+									<div class="hamburger__bar"></div>
+								</div>
+								<span class="modal-close-btn__text">CLOSE</span>
+							</button>
+						</div>
+					</div>
+
+					<!-- See all btn -->
+					<a class="cta-btn" href="./works.html">
+						<span class="cta-btn__text">See all</span>
+						<i class="custom-icon icon-arrow-down">&#xe877;</i>
+					</a>
 				</div>
 			</section>
 			<section id="contact-panel" class="section-panel">
 				<div class="section-panel__inner">
-					<h2 class="section-panel__heading">Contact</h2>
-					<p class="section-panel__para">Here are the ways to get in touch with me!</p>
+					<h2 class="section-panel__heading animation-on-scroll">Contact</h2>
+					<div class="para-wrapper animation-on-scroll">
+						<p class="section-panel__para">Here are the ways to get in touch with me.</p>
+						<p class="section-panel__para">I'm always seeking for opportunities to grow and improve myself. Looking forward to hearing from you!</p>
+					</div>
 
 					<!-- Contact list -->
-					<ul class="contact-list">
+					<ul class="contact-list animation-on-scroll">
 						<li class="contact-list__item">
 							<a class="contact-list__link" href="mailto:tomo.k.dev@gmail.com">
-								<i class="socials__icon contact-list__icon">&#xe87a;</i>
+								<i class="socials__icon contact-list__link--icon">&#xe87a;</i>
 								<span>tomo.k.dev@gmail.com</span>
 							</a>
 						</li>
 						<li class="contact-list__item">
 							<a class="contact-list__link" href="https://github.com/tomokawaguchi" target="_blank">
-								<i class="socials__icon contact-list__icon">&#xe87b;</i>
+								<i class="socials__icon contact-list__link--icon">&#xe87b;</i>
 								<span>/tomoko-kawaguchi</span>
 							</a>
 						</li>
 						<li class="contact-list__item">
 							<a class="contact-list__link" href="https://www.linkedin.com/in/tomoko-kawaguchi/" target="_blank">
-								<i class="socials__icon contact-list__icon">&#xe87c;</i>
+								<i class="socials__icon contact-list__link--icon">&#xe87c;</i>
 								<span>/tomokawaguchi</span>
 							</a>
 						</li>
@@ -197,24 +316,30 @@
 					<!-- For the scroll button -->
 					<a href="#landing-panel" class="scroll-btn scroll-btn--back">
 						<span class="scroll-btn__text">Back to Top</span>
-						<i class="custom-icon icon-arrow-up">&#xe877;</i>
+						<i class="custom-icon icon-arrow-up">&#xe801;</i>
 					</a>
 				</div>
 			</section>
 		</main>
 		<aside id="aside-section">
 			<div class="aside-inner">
-				<div class="socials">
-					<a class="socials__link" href="mailto:tomo.k.dev@gmail.com">
-						<i class="socials__icon socials__icon--email">&#xe87a;</i>
-					</a>
-					<a class="socials__link" href="https://github.com/tomokawaguchi" target="_blank">
-						<i class="socials__icon socials__icon--github">&#xe87b;</i>
-					</a>
-					<a class="socials__link" href="https://www.linkedin.com/in/tomoko-kawaguchi/" target="_blank">
-						<i class="socials__icon socials__icon--linkedin">&#xe87c;</i>
-					</a>
-				</div>
+				<ul class="socials">
+					<li class="socials__item">
+						<a class="socials__link" href="mailto:tomo.k.dev@gmail.com">
+							<i class="socials__icon socials__icon--email">&#xe87a;</i>
+						</a>
+					</li>
+					<li class="socials__item">
+						<a class="socials__link" href="https://github.com/tomokawaguchi" target="_blank">
+							<i class="socials__icon socials__icon--github">&#xe87b;</i>
+						</a>
+					</li>
+					<li class="socials__item">
+						<a class="socials__link" href="https://www.linkedin.com/in/tomoko-kawaguchi/" target="_blank">
+							<i class="socials__icon socials__icon--linkedin">&#xe87c;</i>
+						</a>
+					</li>
+				</ul>
 			</div>
 		</aside>
 		<footer>

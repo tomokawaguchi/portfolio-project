@@ -10,7 +10,7 @@ aside {
 		position: fixed;
 		right: 1rem;
 		top: 110px;
-		height: 100%;
+		height: 20%;
 	}
 
 	@include mediaQuery("min", 550px) {
@@ -25,6 +25,12 @@ aside {
 
 		.aside-inner {
 			position: fixed;
+			right: 25px;
 		}
 	}
+}
+
+// active modal state
+.active-modal aside {
+	z-index: -1;
 }

@@ -8,8 +8,8 @@ header {
 	z-index: 1;
 
 	.header-inner {
-		@include displayFlex(space-between, flex-end);
-		padding: 1.5rem 1rem;
+		@include displayFlex(space-between, center);
+		padding: 2rem 1rem;
 	}
 
 	// For the logo
@@ -18,6 +18,10 @@ header {
 		text-decoration: none;
 		color: $pink;
 		font-size: 32px;
+
+		@include onHoverFocus {
+			animation: hoverAnimation 0.5s ease-in-out;
+		}
 	}
 
 	// Hamburger button
@@ -28,13 +32,15 @@ header {
 		cursor: pointer;
 
 		.hamburger {
-			@include displayFlex(space-evenly, unset);
+			@include transitionEaseInOut(0.2s);
+			@include displayFlex(space-between, unset);
 			flex-direction: column;
-			height: 30px;
-			width: 30px;
+			height: 20px;
+			margin-bottom: 10px;
 
 			&__bar {
-				width: 100%;
+				@include transitionEaseInOut(0.2s);
+				width: 30px;
 				height: 2px;
 				background-color: $black-light;
 			}
@@ -50,6 +56,7 @@ header {
 	}
 
 	.mobile-menu-wrapper {
+		@include transitionEaseInOut(0.3s);
 		position: absolute;
 		background-color: $black-light;
 		right: 0;
@@ -62,7 +69,7 @@ header {
 
 	@include mediaQuery("min", 550px) {
 		.header-inner {
-			padding: 2rem;
+			padding: 3rem 2rem;
 		}
 	}
 
@@ -93,13 +100,33 @@ header {
 	}
 
 	&__menu {
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 
 	&__link {
+		@include transitionEaseInOut(0.5s);
+		position: relative;
+		display: inline-block;
 		font-weight: 100;
 		color: $black-light;
 		text-decoration: none;
+
+		&:after {
+			@include transitionEaseInOut(0.4s);
+			position: absolute;
+			content: "";
+			background-color: $black-light;
+			width: 0;
+			height: 1px;
+			bottom: -5px;
+			left: 0;
+		}
+
+		@include onHoverFocus {
+			&:after {
+				width: 100%;
+			}
+		}
 	}
 
 	&--desktop {
@@ -129,21 +156,26 @@ header {
 			z-index: 2;
 
 			.hamburger {
-				display: inline-block;
+				@include transitionEaseInOut(0.5s);
+				display: inline-flex;
+				height: 23px;
+				width: 23px;
 
 				&__bar {
 					background-color: $grey;
 
 					&:first-child {
-						display: none;
+						transform: rotate(45deg);
+						transform-origin: left top;
 					}
 
 					&:nth-child(2) {
-						transform: rotate(-45deg);
+						display: none;
 					}
 
 					&:last-child {
-						transform: rotate(45deg);
+						transform: rotate(-45deg);
+						transform-origin: left bottom;
 					}
 				}
 			}
@@ -159,6 +191,7 @@ header {
 	}
 
 	.mobile-menu-wrapper {
+		@include transitionEaseInOut(0.5s);
 		transform: translateY(0);
 	}
 
@@ -177,12 +210,21 @@ header {
 			}
 		}
 
-		.mobile-menu-btn__text {
+		#mobile-menu-btn__text {
 			color: $grey;
 		}
 	}
 
 	.nav__link {
 		color: $grey-white;
+
+		&:after {
+			background-color: $grey-white;
+		}
 	}
+}
+
+// active modal state
+.active-modal header {
+	z-index: -1;
 }

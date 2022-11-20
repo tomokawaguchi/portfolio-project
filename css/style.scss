@@ -8,6 +8,8 @@
 @use "./scss/components/socials-bar";
 @use "./scss/components/scroll-btn";
 @use "./scss/components/contacts-list";
+@use "./scss/components/work-item";
+@use "./scss/components/modal";
 
 //******************** Layouts ********************//
 @use "./scss/layouts/body";
@@ -16,8 +18,13 @@
 @use "./scss/layouts/aside";
 @use "./scss/layouts/footer";
 @use "./scss/layouts/global-panel";
-@use "./scss/layouts/landing-panel";
-@use "./scss/layouts/about-panel";
-@use "./scss/layouts/contact-panel";
 
 //******************** Pages ********************//
+@use "./scss/pages/home/landing-panel";
+@use "./scss/pages/home/about-panel";
+@use "./scss/pages/home/works-panel";
+@use "./scss/pages/home/contact-panel";
+
+// Works
+@use "./scss/pages/works/works-landing-panel";
+@use "./scss/pages/works/works-list-panel";

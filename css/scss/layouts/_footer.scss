@@ -17,3 +17,8 @@ footer {
 		font-size: 14px;
 	}
 }
+
+// active modal state
+.active-modal footer {
+	z-index: -1;
+}
