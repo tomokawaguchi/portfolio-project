@@ -650,42 +650,6 @@ template {
   }
 }
 
-@keyframes hoverAnimation {
-  from, to {
-    transform: scale(1, 1);
-  }
-  25% {
-    transform: scale(0.9, 1.1);
-  }
-  50% {
-    transform: scale(1.1, 0.9);
-  }
-  75% {
-    transform: scale(0.95, 1.05);
-  }
-}
-@keyframes slideDown {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-}
-@keyframes slideUp {
-  0%, 100% {
-    transform: translate(0, 10px);
-  }
-  50% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes modalAppear {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-}
 .modal-wrapper {
   transition: all 0.4s ease-in-out;
   display: flex;
@@ -971,42 +935,6 @@ body.active-modal {
   opacity: 1;
 }
 
-@keyframes hoverAnimation {
-  from, to {
-    transform: scale(1, 1);
-  }
-  25% {
-    transform: scale(0.9, 1.1);
-  }
-  50% {
-    transform: scale(1.1, 0.9);
-  }
-  75% {
-    transform: scale(0.95, 1.05);
-  }
-}
-@keyframes slideDown {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-}
-@keyframes slideUp {
-  0%, 100% {
-    transform: translate(0, 10px);
-  }
-  50% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes modalAppear {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-}
 header {
   position: fixed;
   width: 100%;
@@ -1300,42 +1228,6 @@ footer .copyright {
   z-index: -1;
 }
 
-@keyframes hoverAnimation {
-  from, to {
-    transform: scale(1, 1);
-  }
-  25% {
-    transform: scale(0.9, 1.1);
-  }
-  50% {
-    transform: scale(1.1, 0.9);
-  }
-  75% {
-    transform: scale(0.95, 1.05);
-  }
-}
-@keyframes slideDown {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-}
-@keyframes slideUp {
-  0%, 100% {
-    transform: translate(0, 10px);
-  }
-  50% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes modalAppear {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-}
 .section-panel {
   position: relative;
   min-height: 100vh;
@@ -1672,42 +1564,6 @@ footer .copyright {
   margin-right: 85px;
 }
 
-@keyframes hoverAnimation {
-  from, to {
-    transform: scale(1, 1);
-  }
-  25% {
-    transform: scale(0.9, 1.1);
-  }
-  50% {
-    transform: scale(1.1, 0.9);
-  }
-  75% {
-    transform: scale(0.95, 1.05);
-  }
-}
-@keyframes slideDown {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 10px);
-  }
-}
-@keyframes slideUp {
-  0%, 100% {
-    transform: translate(0, 10px);
-  }
-  50% {
-    transform: translate(0, 0);
-  }
-}
-@keyframes modalAppear {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-}
 #contact-panel {
   position: relative;
 }
