@@ -889,6 +889,17 @@ body.active-modal {
   font-weight: 700;
 }
 
+.animation-on-scroll {
+  transition: all 1.5s ease-in-out;
+  position: relative;
+  transform: translateY(80px);
+  opacity: 0;
+}
+.animation-on-scroll.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -1397,6 +1408,21 @@ footer .copyright {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+#about-panel .tech-list .inner-list-wrapper {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  justify-content: unset;
+  align-items: unset;
+}
+#about-panel .tech-list .inner-list-wrapper .inner-list {
+  margin: 0;
+}
+#about-panel .tech-list .inner-list-wrapper .inner-list__system {
+  margin-left: 40px;
 }
 @media only screen and (min-width: 675px) {
   #about-panel .tech-list {

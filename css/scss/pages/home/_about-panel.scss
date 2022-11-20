@@ -99,6 +99,19 @@
 		padding: 0;
 		margin: 0;
 
+		// Inner list
+		.inner-list-wrapper {
+			@include displayFlex(unset, unset);
+
+			.inner-list {
+				margin: 0;
+
+				&__system {
+					margin-left: 40px;
+				}
+			}
+		}
+
 		@include mediaQuery("min", 675px) {
 			grid-template-columns: 1fr 1fr;
 		}

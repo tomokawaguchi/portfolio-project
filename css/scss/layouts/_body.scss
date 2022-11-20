@@ -42,3 +42,15 @@ body {
 .bold-text {
 	font-weight: 700;
 }
+
+.animation-on-scroll {
+	@include transitionEaseInOut(1.5s);
+	position: relative;
+	transform: translateY(80px);
+	opacity: 0;
+
+	&.active {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

@@ -1,11 +1,9 @@
 const body = document.getElementById("body-section");
-const featuredWorksWrapper = document.getElementById("featured-works-wrapper");
-let allWorksWrapper = document.getElementById("all-works-wrapper");
 // Project data
 import { worksData } from "./data.js";
 
 // Single article HTML
-const articleHTML = `<div class="article-link-wrapper">
+const articleHTML = `<div class="article-link-wrapper animation-on-scroll">
 		<div class="inner-wrapper">
 			<article class="work">
 				<a class="work__link" href="">
@@ -20,42 +18,68 @@ const articleHTML = `<div class="article-link-wrapper">
 		</div>
 	</div>`;
 
-// Mapping project data - 3 featured
-const featuredWorks = worksData.filter((each) => each.featured);
-if (featuredWorksWrapper) {
+// Execute the codes when users are on the homepage
+if (body.classList.contains("home-page")) {
+	// Mapping project data - 3 featured
+	const featuredWorks = worksData.filter((each) => each.featured);
+
 	// Ensuring data contains only 3 works
 	if (featuredWorks.length > 3) {
 		featuredWorks.splice(0, featuredWorks.length - 3);
 	} else if (featuredWorks.length < 3) {
 		const required = 3 - featuredWorks.length;
-		const unfeaturedWorks = worksData.filter((each) => !each.featured);
-		const remainingArr = unfeaturedWorks.splice(0, required);
+		const isNotFeatured = worksData.filter((each) => !each.featured);
+		const remainingArr = isNotFeatured.splice(0, required);
 		featuredWorks.push(...remainingArr);
 	}
 
 	mapWorks(featuredWorks);
+
+	const allFeaturedWorks = document.querySelectorAll(".work__link");
+
+	allFeaturedWorks.forEach((featuredLink) => {
+		featuredLink.addEventListener("click", (event) => {
+			event.preventDefault();
+			// add active modal class
+			body.classList.add("active-modal");
+
+			// Map modal data
+			mapModalData(featuredWorks, event);
+		});
+
+		// Removing active class
+		const modalCloseBtn = document.getElementById("modal-close-btn");
+		if (modalCloseBtn) {
+			modalCloseBtn.addEventListener("click", () => {
+				body.classList.remove("active-modal");
+			});
+		}
+	});
 }
 
-// Mapping project data - All
-if (allWorksWrapper) {
-	let dataLength = worksData.length;
-	let fullItemsHTML = "";
+// Execute the codes when users are on the homepage
+if (body.classList.contains("works-page")) {
+	let allWorksWrapper = document.getElementById("all-works-wrapper");
 
-	while (dataLength > 0) {
-		fullItemsHTML += articleHTML;
-		dataLength--;
+	// Mapping project data - All
+	if (allWorksWrapper) {
+		let dataLength = worksData.length;
+		let fullItemsHTML = "";
+
+		while (dataLength > 0) {
+			fullItemsHTML += articleHTML;
+			dataLength--;
+		}
+
+		allWorksWrapper.innerHTML = fullItemsHTML;
+
+		mapWorks(worksData);
 	}
 
-	allWorksWrapper.innerHTML = fullItemsHTML;
+	// Modal - Adding active class
+	allWorksWrapper = document.getElementById("all-works-wrapper");
+	const workLinkList = document.querySelectorAll(".work__link");
 
-	mapWorks(worksData);
-}
-
-// Modal - Adding active class
-allWorksWrapper = document.getElementById("all-works-wrapper");
-const workLinkList = document.querySelectorAll(".work__link");
-
-if (workLinkList) {
 	workLinkList.forEach((workLink) => {
 		workLink.addEventListener("click", (event) => {
 			event.preventDefault();
@@ -74,19 +98,6 @@ if (workLinkList) {
 			body.classList.remove("active-modal");
 		});
 	}
-}
-
-if (featuredWorksWrapper) {
-	featuredWorksWrapper.forEach((featuredLink) => {
-		featuredLink.addEventListener("click", (event) => {
-			event.preventDefault();
-			// add active modal class
-			body.classList.add("active-modal");
-
-			// Map modal data
-			mapModalData(featuredWorks, event);
-		});
-	});
 }
 
 // Function - Mapping works with given data
@@ -116,7 +127,8 @@ function mapModalData(data, event) {
 	const snapshotsList = modal.querySelectorAll(".modal__snapshots__item");
 
 	const dataId = event.target.getAttribute("data-id");
-	const { name, desc, liveLink, repo, featuredImage, snapshots } = data[dataId - 1];
+	const currentData = data.filter((each) => each.id == dataId);
+	const { name, desc, liveLink, repo, featuredImage, snapshots } = currentData[0];
 
 	title.innerHTML = name;
 	live.href = liveLink;
