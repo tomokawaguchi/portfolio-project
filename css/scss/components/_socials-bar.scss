@@ -1,5 +1,6 @@
 @use "../partials/mixins" as *;
 @import "../partials/palette";
+@import "../partials/animations";
 
 .socials {
 	@include displayFlex(unset, center);

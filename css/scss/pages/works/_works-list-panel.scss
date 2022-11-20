@@ -5,18 +5,6 @@
 #project-list-panel {
 	position: relative;
 
-	// &:before {
-	// 	@include transitionEaseInOut(0.5s);
-	// 	content: "Works";
-	// 	font-size: 140px;
-	// }
-
-	// &:after {
-	// 	@include transitionEaseInOut(0.5s);
-	// 	content: "実績一覧";
-	// 	left: -30px;
-	// }
-
 	.all-works-wrapper {
 		display: grid;
 		grid-template-columns: 1fr;
