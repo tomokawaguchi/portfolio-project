@@ -1,6 +1,6 @@
 # Portfolio Project
 
-![portfolio snapshot](https://github.com/tomokawaguchi/portfolio-project/blob/main/images/portfolio-snapshot.png?raw=true)
+<img src="https://github.com/tomokawaguchi/portfolio-project/blob/main/images/portfolio-snapshot.png" width="auto" height="400" />
 
 
 This is a portfolio website project where the site is developed with HTML, SCSS and vanilla JavaScript. This is a simple 2 pages site: Home page(index.html) and Works(works.html).
