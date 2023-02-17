@@ -2,7 +2,6 @@
 
 <img src="https://github.com/tomokawaguchi/portfolio-project/blob/main/images/portfolio-snapshot.png" width="auto" height="400" />
 
-
 This is a portfolio website project where the site is developed with HTML, SCSS and vanilla JavaScript. This is a simple 2 pages site: Home page(index.html) and Works(works.html).
 
 ## Home Page
@@ -26,3 +25,7 @@ I have used a similar logic to map the project data for both works panel on the 
 #### **Modal / Popup**
 
 Although I have considered utilising the existing libraries to achieve modal functionality, I have decided to built it by myself for practicing and improving my vanilla JavaScript skill. I have also added some animation to smooth open/close.
+
+## Change logs
+
+- 13-02-2023 : Started revamping portfolio in ReactJS project with different design. See my progress here: https://github.com/tomokawaguchi/my-portfolio/tree/ver-2023
