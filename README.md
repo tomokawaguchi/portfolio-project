@@ -1,5 +1,9 @@
 # Portfolio Project
 
+**This site was developed during a nology course for practice purpuses. My main portfolio site can be viewed at https://tomok.dev/ and github repo is https://github.com/tomokawaguchi/portfolio**
+
+
+
 <img src="https://github.com/tomokawaguchi/portfolio-project/blob/main/images/portfolio-snapshot.png" width="auto" height="400" />
 
 This is a portfolio website project where the site is developed with HTML, SCSS and vanilla JavaScript. This is a simple 2 pages site: Home page(index.html) and Works(works.html).
@@ -28,4 +32,4 @@ Although I have considered utilising the existing libraries to achieve modal fun
 
 ## Change logs
 
-- 13-02-2023 : Started revamping portfolio in ReactJS project with different design. See my progress here: https://github.com/tomokawaguchi/my-portfolio/tree/ver-2023
+- 13-02-2023 : Started revamping portfolio in ReactJS project with different design. See my progress here: https://github.com/tomokawaguchi/portfolio
